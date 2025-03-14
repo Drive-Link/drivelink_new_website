@@ -7,7 +7,7 @@ import worldBg from '../../../public/map-bg 1.png'
 const HeroSection = () => {
   return (
     <div className="hero-section  bg-[rgba(182,204,255,0.095)]  ">
-        <div className="hero-section-content max-w-[1200px] mx-[auto] bg-[transparent] min-h-[80vh] flex flex-col relative sm:flex-row    ">
+        <div className="hero-section-content max-w-[1200px] mx-[auto] bg-[transparent] min-h-[80vh] flex flex-col relative sm:flex-row p-[20px] sm:p-0   ">
             <div className="box1  ">
                 <span className='font-[700] text-[64px] leading-[72px] '>Find and Hire <br /> Verified Drivers  </span> <br />
                 <span className='font-[700] text-[64px] text-[#101f91] leading-[72px] ' >Fast and Hassle Free</span>
