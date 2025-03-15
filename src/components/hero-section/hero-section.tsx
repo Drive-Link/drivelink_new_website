@@ -67,7 +67,9 @@ const HeroSection = () => {
               <div className="world-img-bg absolute top-[10%] left-[37%]    ">
                 <Image src={worldBg} alt='hero world background' />
               </div>
-
+              <div className="card1img w-[152px] h-[80px] absolute left-[0px] bottom-[0px] ">
+                  <Image className='w-[100%] h-[100%] ' src={herobox2card1} alt='card-header one' />
+                </div>
             </div>
     </div>
   )
