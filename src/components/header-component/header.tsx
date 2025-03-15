@@ -6,7 +6,7 @@ import menu  from '../../../public/menu.png'
 const Header = () => {
   return (
     <div className=' header bg-[rgba(182,204,255,0.095)] ' >
-      <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center bg-[rgba(182,204,255,0.095)]  p-[20px] sm:p-0 ">
+      <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center bg-[rgba(182,204,255,0.095)] p-[20px] sm:p-0 ">
         <div className="logo w-[135px] flex items-center justify-between ">
           <div className="drivelink-img w-[42px] ">
           <Image src={img} alt='Drivelink icon' />
