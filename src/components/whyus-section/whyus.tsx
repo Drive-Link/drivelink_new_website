@@ -10,6 +10,11 @@ const Whyus = () => {
       <div className="p flex justify-center mt-[30px] ">
         <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
       </div>
+      {/* grid */}
+      <div className="whyus-grp grid grid-cols-1 ">
+        <div className="whyus1grid">okay1</div>
+        <div className="whyus1grid">okay2</div>
+      </div>
         </div>
     </div>
   )
