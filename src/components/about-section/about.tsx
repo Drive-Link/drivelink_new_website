@@ -5,9 +5,9 @@ import abouticon from '../../../public/about-icon.png'
 const About = () => {
   return (
    <div className="about-section">
-    <div className="section-content p-[20px] min-h-[80vh] border max-w-[1200px] mx-[auto] sm:p-0 ">
+    <div className="section-content px-[20px] min-h-[80vh] border max-w-[1200px] mx-[auto] sm:p-0 ">
       <div className="headerabout flex justify-center ">
-        <span className='text-center font-[700] text-[25px] d-block ' >How Our Driver App Works: <br /> <span className='text-[#101f91]' >Simple and Fast </span> </span>
+        <span className='text-center font-[700] text-[25px] d-block  max-w-[400px] ' >How Our Driver App Works:  <span className='text-[#101f91]' >Simple and Fast </span> </span>
       </div>
       <div className="p flex justify-center mt-[30px] ">
         <p className=' text-[#828589] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] ' >Getting started as a car owner who wants to hire a professional driver has never been easier. Let’s show  you how it’s done in these easy steps</p>

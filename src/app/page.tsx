@@ -1,6 +1,7 @@
 import About from '@/components/about-section/about'
 import Header from '@/components/header-component/header'
 import HeroSection from '@/components/hero-section/hero-section'
+import Whyus from '@/components/whyus-section/whyus'
 import React from 'react'
 const page = () => {
   return (
@@ -8,6 +9,7 @@ const page = () => {
     <Header/>
     <HeroSection/>
     <About/>
+    <Whyus/>
    </div>
   )
 }
