@@ -20,11 +20,12 @@ const Whyus = () => {
       {/* grid */}
       <div className="whyus-grp grid grid-cols-1  ">
         {/* imag and cards */}
-        <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] ">
-          <div className="max-w-[340px] h-[336px] rounded-[20px] overflow-hidden ">
+        <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row ">
+          {/* img */}
+          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] overflow-hidden sm:flex-1 ">
             <Image  className='w-[100%] h-[100%] ' src={drivelinkimg} alt='drivelink-img' />
           </div>
-          <div className="cards flex flex-col gap-[30px] ">
+          <div className="cards flex flex-col gap-[30px] sm:flex-1 ">
             {/* card1 */}
             <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
@@ -52,11 +53,13 @@ const Whyus = () => {
           </div>
         </div>
          {/* imag and cards 2 */}
-         <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] ">
-          <div className="max-w-[340px] h-[336px] rounded-[20px] overflow-hidden ">
+         <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row-reverse ">
+          {/* img */}
+          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] overflow-hidden sm:flex-1 ">
             <Image  className='w-[100%] h-[100%] ' src={drivelinkimg1} alt='drivelink-img' />
           </div>
-          <div className="cards flex flex-col gap-[30px] ">
+          {/* cards */}
+          <div className="cards flex flex-col gap-[30px] sm:flex-1 ">
             {/* card1 */}
             <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
