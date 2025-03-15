@@ -1,4 +1,5 @@
 import About from '@/components/about-section/about'
+import Footer from '@/components/footer/footer'
 import Header from '@/components/header-component/header'
 import HeroSection from '@/components/hero-section/hero-section'
 import React from 'react'
@@ -8,6 +9,7 @@ const page = () => {
     <Header/>
     <HeroSection/>
     <About/>
+    <Footer/>
    </div>
   )
 }
