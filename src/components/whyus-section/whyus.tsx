@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import Image from 'next/image'
 import React from 'react'
 import drivelinkimg from '../../../public/whyusimg1.jpg'
@@ -47,7 +49,7 @@ const Whyus = () => {
                   <div className="span text-[white] font-[700] text-[16px]  ">Transparent Pricing</div>
                 </div>
                 <p className=" text-[12px] font-[400] text-opacity-[72%] leading-[20px] mt-[20px] text-[white] ">
-                Drivelink provides transparent and upfront pricing.  You'll know the cost of your trip before the start your journey.
+                Drivelink provides transparent and upfront pricing.  You&apos;ll know the cost of your trip before the start your journey.
                 </p>
             </div>
           </div>
