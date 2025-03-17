@@ -18,16 +18,17 @@ const Whyus = () => {
         <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
       </div>
       {/* grid */}
-      <div className="whyus-grp grid grid-cols-1  ">
+      <div className="whyus-grp grid grid-cols-1 sm:px-[4%] ">
         {/* imag and cards */}
-        <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row ">
+        <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row  ">
           {/* img */}
-          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] overflow-hidden sm:flex-1 ">
+          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] sm:rounded-[30px] overflow-hidden sm:flex-2 ">
             <Image  className='w-[100%] h-[100%] ' src={drivelinkimg} alt='drivelink-img' />
           </div>
-          <div className="cards flex flex-col gap-[30px] sm:flex-1 ">
+          {/* cards */}
+          <div className="cards flex flex-col gap-[30px] sm:flex-1  sm:h-[100%] sm:py-[20px] ">
             {/* card1 */}
-            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
+            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] sm:flex-1 ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
                   <div className="whyusiconcard w-[20px] h-[20px] ">
                     <Image className='w-[100%] h-[100%] ' src={whyusicon1} alt='card-icon' />
@@ -39,7 +40,7 @@ const Whyus = () => {
                 </p>
             </div>
             {/* card2 */}
-            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
+            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] sm:flex-1 ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
                   <div className="whyusiconcard w-[20px] h-[20px] ">
                     <Image className='w-[100%] h-[100%] ' src={whyusicon2} alt='card-icon' />
@@ -55,13 +56,13 @@ const Whyus = () => {
          {/* imag and cards 2 */}
          <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row-reverse ">
           {/* img */}
-          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] overflow-hidden sm:flex-1 ">
+          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] sm:rounded-[30px] overflow-hidden sm:flex-1 ">
             <Image  className='w-[100%] h-[100%] ' src={drivelinkimg1} alt='drivelink-img' />
           </div>
           {/* cards */}
-          <div className="cards flex flex-col gap-[30px] sm:flex-1 ">
+          <div className="cards flex flex-col gap-[30px] sm:flex-1 sm:h-[100%] sm:py-[20px]  ">
             {/* card1 */}
-            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
+            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] sm:flex-1 ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
                   <div className="whyusiconcard w-[20px] h-[20px] ">
                     <Image className='w-[100%] h-[100%] ' src={whyusicon3} alt='card-icon' />
@@ -73,7 +74,7 @@ const Whyus = () => {
                 </p>
             </div>
             {/* card2 */}
-            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] ">
+            <div className="card1 rounded-[14px] border-[1px] border-[white] p-[23px] bg-[rgba(255,255,255,0.1)] sm:flex-1 ">
                 <div className="whyuscardheader flex items-center gap-[20px] ">
                   <div className="whyusiconcard w-[20px] h-[20px] ">
                     <Image className='w-[100%] h-[100%] ' src={whyusicon4} alt='card-icon' />
