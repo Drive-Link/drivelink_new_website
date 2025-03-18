@@ -14,17 +14,17 @@ const Whyus = () => {
     <div className="whyus-section">
         <div className="whyus-content max-w-[1200px] mx-[auto] min-h-[80vh] bg-[#101F91] px-[20px] pb-[50px]  ">
         <div className="headerabout flex justify-center  ">
-        <span className='text-center font-[500] text-[25px] d-block  max-w-[400px] text-[white] mt-[50px] ' >Why Drivelink ?</span>
+        <span className='text-center font-[500] text-[25px] sm:text-[56px] d-block  max-w-[400px] text-[white] mt-[50px] ' >Why Drivelink ?</span>
       </div>
       <div className="p flex justify-center mt-[30px] ">
-        <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
+        <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] sm:max-w-[610px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
       </div>
       {/* grid */}
       <div className="whyus-grp grid grid-cols-1 sm:px-[4%] ">
         {/* imag and cards */}
         <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row  ">
           {/* img */}
-          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] sm:rounded-[30px] overflow-hidden sm:flex-2 ">
+          <div className="max-w-[340px] sm:max-w-[580px] h-[336px] sm:h-[430px] rounded-[20px] sm:rounded-[30px] overflow-hidden sm:flex-1 ">
             <Image  className='w-[100%] h-[100%] ' src={drivelinkimg} alt='drivelink-img' />
           </div>
           {/* cards */}
