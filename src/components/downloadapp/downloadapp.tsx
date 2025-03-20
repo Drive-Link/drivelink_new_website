@@ -1,27 +1,32 @@
 import Image from 'next/image'
 import React from 'react'
-import play from '../../../public/Group 3.png'
-import getiton from '../../../public/Get it on.png'
-import googleplay from '../../../public/Google Play.png'
+// import play from '../../../public/Group 3.png'
+// import getiton from '../../../public/Get it on.png'
+// import googleplay from '../../../public/Google Play.png'
 import appstore from '../../../public/Group 3.png'
+import playbtn from '../../../public/Mobile app store badge.png'
+import downloadphone from '../../../public/download-phone.png'
+import lines from '../../../public/lines.png'
+
 
 const DownloadApp = () => {
   return (
     <div className="downloadapp-section bg-[white]">
-      <div className="downloadapp-content  max-w-[1200px] min-h-[80vh] mx-[auto] px-[20px] py-[40px] ">
+      <div className="downloadapp-content  max-w-[1200px]  mx-[auto] px-[20px] py-[40px] border relative ">
 
-        <div className=" max-w-[1200px] min-h-[80vh] mx-[auto] border px-[20px] bg-[black] rounded-[20px] flex flex-col ">
+        <div className=" max-w-[1200px]  mx-[auto] border px-[20px] bg-[black] rounded-[20px] flex flex-col sm:flex-row sm:bg-[#030729] sm:px-[50px] ">
           {/* boxes */}
             <div className="download-box1 flex-1 ">
-              <div className="h1 flex justify-center mt-[90px] ">
-                  <span className='font-[700] text-[26px] leading-[39px] text-[white]  max-w-[250px] text-center ' >
+              <div className="h1 flex justify-center sm:justify-start mt-[90px] ">
+                  <span className='font-[700] text-[26px] sm:text-[40px] leading-[39px] text-[white]  max-w-[250px] text-center sm:max-w-[500px] sm:text-start ' >
                   Drive Smarter, Ride Safer Anytime, Anywhere!
                   </span>
               </div>
-              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center ' >
+              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center sm:text-start sm:max-w-[520px] sm:text-[18px] sm:leading-[28px] ' >
               Join thousands of verified drivers and car owners enjoying seamless rides with just a tap. Book or drive with confidence, earn effortlessly, and experience true convenience.
               </p>
-              <div className="btn-group flex mt-[30px] gap-[20px] ">
+              {/* btn-group */}
+              <div className="btn-group flex justify-center sm:justify-start mt-[30px] gap-[20px] ">
                 {/* mannual btn1 */}
                 {/* <div className="btn-1 w-[135px] h-[45px] bg-[white] rounded-[5px] flex ">
                   <div className="btn-box1">
@@ -44,7 +49,7 @@ const DownloadApp = () => {
                 </div> */}
                 {/* copy paste */}
                  <div className="btn-2 w-[135px] h-[45px] ">
-                  <Image className='w-[100%] h-[100%' src={appstore} alt='' />
+                  <Image className='w-[100%] h-[100%' src={playbtn} alt='' />
                 </div>
                 <div className="btn-2 w-[135px] h-[45px] ">
                   <Image className='w-[100%] h-[100%' src={appstore} alt='' />
@@ -57,10 +62,17 @@ const DownloadApp = () => {
               </div>
             </div>
             {/* box2 */}
-            <div className="download-box2 flex-1 ">
-             
+            <div className="download-box2 flex-1 flex justify-center sm:justify-end  mt-[30px] ">
+             <div className="phone-img w-[400px] ">
+              <Image className='w-[100%]  ' src={downloadphone} alt='' />
+             </div>
             </div>
 
+        </div>
+        {/* ab-el */}
+        {/* className='w-[100%] ' */}
+        <div className="img-line absolute top-0 left-[-30px] ">
+          <Image  src={lines} alt='bg-design' />
         </div>
       </div>
     </div>
