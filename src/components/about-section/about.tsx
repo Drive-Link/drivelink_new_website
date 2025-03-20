@@ -7,14 +7,14 @@ const About = () => {
    <div className="about-section">
     <div className="section-content p-[20px] min-h-[80vh] border max-w-[1200px] mx-[auto] sm:p-0 ">
       <div className="headerabout flex justify-center ">
-        <span className='text-center font-[700] text-[25px] d-block ' >How Our Driver App Works: <br /> <span className='text-[#101f91]' >Simple and Fast </span> </span>
+        <span className='text-center font-[700] text-[25px] sm:text-[56px] max-w-[400px] sm:max-w-[800px] d-block sm:leading-[100%] ' >How Our Driver App Works: <span className='text-[#101f91]' >Simple and Fast </span> </span>
       </div>
-      <div className="p flex justify-center mt-[30px] ">
-        <p className=' text-[#828589] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] ' >Getting started as a car owner who wants to hire a professional driver has never been easier. Let’s show  you how it’s done in these easy steps</p>
+      <div className="p flex justify-center mt-[20px] ">
+        <p className=' text-[#828589] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] sm:max-w-[610px] ' >Getting started as a car owner who wants to hire a professional driver has never been easier. Let’s show  you how it’s done in these easy steps</p>
       </div>
-      <div className="about-boxes flex flex-wrap gap-8">
+      <div className="about-boxes flex grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mt-[30px] mt-[40px] ">
         {/* box1 */}
-        <div className="about-box1 border h-[455px] basis-[335px] flex-1 px-[16px]  ">
+        <div className="about-box1 border h-[455px] basis-[335px] flex-1 bg-[#F4F7FF] px-[16px]  ">
           <div className="icon mt-[30px] ">
             <div className="icon-bg flex justify-center items-center w-[40px] h-[40px] bg-[#101f91] rounded-[100%] ">
               <Image  src={abouticon} alt='star-icon' />
@@ -27,7 +27,7 @@ const About = () => {
           </div>
         </div>
         {/* box2 */}
-        <div className="about-box2 border h-[455px] basis-[335px] flex-1 px-[16px]  ">
+        <div className="about-box2 border h-[455px] bg-[#F4F7FF] basis-[335px] flex-1 px-[16px]  ">
         <div className="icon mt-[30px] ">
             <div className="icon-bg flex justify-center items-center w-[40px] h-[40px] bg-[#101f91] rounded-[100%] ">
               <Image  src={abouticon} alt='star-icon' />
@@ -41,7 +41,7 @@ Booking Or Scheduling A Ride At Your Convenience</p>
           </div>
         </div>
         {/* box3 */}
-        <div className="about-box3 border h-[455px] basis-[335px] flex-1 px-[16px]  ">
+        <div className="about-box3 border h-[455px] bg-[#F4F7FF] basis-[335px] flex-1 px-[16px]  ">
         <div className="icon mt-[30px] ">
             <div className="icon-bg flex justify-center items-center w-[40px] h-[40px] bg-[#FFC80F] rounded-[100%] ">
               <Image  src={abouticon} alt='star-icon' />
@@ -54,7 +54,7 @@ Booking Or Scheduling A Ride At Your Convenience</p>
           </div>
         </div>
         {/* box4 */}
-        <div className="about-box4 border h-[455px] basis-[335px] flex-1 px-[16px]  ">
+        <div className="about-box4 border h-[455px] bg-[#F4F7FF] basis-[335px] flex-1 px-[16px]  ">
         <div className="icon mt-[30px] ">
             <div className="icon-bg flex justify-center items-center w-[40px] h-[40px] bg-[#FFC80F] rounded-[100%] ">
               <Image  src={abouticon} alt='star-icon' />
