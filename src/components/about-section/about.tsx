@@ -5,17 +5,19 @@ import box1img1 from '../../../public/Mockup-box-1.png'
 import box1img2 from '../../../public/Mockup -box1(2).png'
 import box2img2 from '../../../public/Mockup-box2.png'
 import box3img1 from '../../../public/Mockup-box3.png'
+import box4img1 from '../../../public/Mockup box4.png'
 import box2imgcard1 from '../../../public/Card header.png'
 import box2imgcard2 from '../../../public/box2-card2.png'
 import box3imgcard1 from '../../../public/card-box3.png'
 import box3imgcard2 from '../../../public/Card header box3.png'
+import box4imgcard from '../../../public/card-box4.png'
 import aboutlinebox1 from '../../../public/about-line-box1.png'
 import aboutlinebox3 from '../../../public/aboutline-box-3.png'
 
 const About = () => {
   return (
    <div className="about-section">
-    <div className="section-content p-[20px] min-h-[80vh] border max-w-[1200px] mx-[auto] sm:p-0 ">
+    <div className="section-content p-[20px] min-h-[80vh]  max-w-[1200px] mx-[auto] sm:p-0 ">
       <div className="headerabout flex justify-center ">
         <span className='text-center font-[700] text-[25px] sm:text-[56px] max-w-[400px] sm:max-w-[800px] d-block sm:leading-[100%] ' >How Our Driver App Works: <span className='text-[#101f91]' >Simple and Fast </span> </span>
       </div>
@@ -25,7 +27,7 @@ const About = () => {
       {/* boxes */}
       <div className="flex justify-center">
 
-      <div className="about-boxes  border-[red] gap-[50px]  border grid grid-cols-1 sm:grid-cols-2  sm:mt-[30px] mt-[40px] ">
+      <div className="about-boxes   gap-[50px]  grid grid-cols-1 sm:grid-cols-2  sm:mt-[30px] mt-[40px] ">
         {/* box1 */}
         <div className="about-box1 border  max-w-[550px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
           {/* icon and h1 */}
@@ -120,17 +122,20 @@ const About = () => {
             <p className=' text-[12px] sm:text-[16] leading-[18px] sm:leading-[28px] font-[400] text-[#828589]  max-w-[300px] sm:max-w-[400px]  ' >Get real-time updates as your verified driver arrives. Sit back, relax, and enjoy a smooth ride in your own car.</p>
           </div>
           {/* mock-ups */}
-          <div className="img-group mt-[40px] sm:mt-[40px] flex items-end justify-start sm:justify-center relative border ">
+          <div className="img-group mt-[40px] sm:mt-[40px] flex items-end justify-start  relative  ">
             
-            <div className="img1 w-[150px] sm:w-[200px] z-[1] ml-[20px] ">
-              <Image src={box3img1} alt='' />
+            <div className="img1 w-[150px] sm:w-[250px] z-[1] ml-[10px] ">
+              <Image className='w-[100%] ' src={box3img1} alt='' />
             </div>
             {/* ab-el */}
             <div className="img absolute top-[-20px]  left-[20px]  w-[100%]  z-[0] sm:w-[110%]  ">
               <Image className='w-[100%] sm:ml-[-8px]  ml-[-50px] h-[100%] ' src={aboutlinebox3} alt='lines' />
             </div>
-            <div className="img absolute top-[-20px]  left-[20px]  bottom-0 left-[0px]  z-[1] sm:w-[110%]  ">
-              <Image className='w-[100%] sm:ml-[-8px]  ml-[-50px] h-[100%] ' src={box3imgcard1} alt='lines' />
+            <div className="img absolute bottom-[0px] sm:bottom-[60px]  left-[80px] sm:left-[20px]  w-[200px] h-[113px]  z-[1] sm:w-[110%]  ">
+              <Image className='   ' src={box3imgcard1} alt='lines' />
+            </div>
+            <div className="img absolute top-[9px]  left-[160px]  w-[200px] h-[113px]  z-[1] sm:w-[110%]  ">
+              <Image className=' sm:ml-[-8px]  ml-[-50px]  ' src={box3imgcard2} alt='lines' />
             </div>
           </div>
         </div>
@@ -155,15 +160,15 @@ const About = () => {
           </div>
           {/* mock-ups */}
           <div className="img-group mt-[40px] sm:mt-[40px] flex items-end justify-start sm:justify-center relative ">
-            <div className="img1 w-[150px] sm:w-[200px] z-[1] ">
-              <Image src={box1img1} alt='' />
+            <div className="img1 w-[150px] sm:w-[250px] z-[1] ">
+              <Image src={box4img1} alt='' />
             </div>
             <div className="img2 ml-[-50px] sm:w-[200px] w-[150px]  z-[1]">
-              <Image src={box1img2} alt='' />
+              <Image src={box4imgcard} alt='' />
             </div>
             {/* ab-el */}
             <div className="img absolute top-[-15]  left-0  w-[110%]  z-[0] sm:w-[110%]  ">
-              <Image className='w-[100%] sm:ml-[-8px]  ml-[-50px] h-[100%] ' src={aboutlinebox1} alt='lines' />
+              <Image className='w-[100%] sm:ml-[-8px]  ml-[-50px] h-[100%] ' src={aboutlinebox3} alt='lines' />
             </div>
           </div>
         </div>
