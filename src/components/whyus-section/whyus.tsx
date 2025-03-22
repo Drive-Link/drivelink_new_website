@@ -16,7 +16,7 @@ const Whyus = () => {
         <div className="headerabout flex justify-center  ">
         <span className='text-center font-[500] text-[25px] sm:text-[56px] d-block  max-w-[400px] text-[white] mt-[50px] ' >Why Drivelink ?</span>
       </div>
-      <div className="p flex justify-center mt-[30px] ">
+      <div className="p flex justify-center mt-[20px] ">
         <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] sm:max-w-[610px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
       </div>
       {/* grid */}
