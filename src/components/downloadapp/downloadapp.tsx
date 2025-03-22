@@ -12,9 +12,9 @@ import lines from '../../../public/lines.png'
 const DownloadApp = () => {
   return (
     <div className="downloadapp-section bg-[white]">
-      <div className="downloadapp-content  max-w-[1200px]  mx-[auto] px-[20px] py-[40px] border relative ">
+      <div className="downloadapp-content  max-w-[1200px]  mx-[auto] px-[20px] py-[40px] relative ">
 
-        <div className=" max-w-[1200px]  mx-[auto] border px-[20px] bg-[black] rounded-[20px] flex flex-col sm:flex-row sm:bg-[#030729] sm:px-[50px] ">
+        <div className=" max-w-[1200px]  mx-[auto]  px-[20px] bg-[black] rounded-[20px] flex flex-col sm:flex-row sm:bg-[#030729] sm:px-[50px] ">
           {/* boxes */}
             <div className="download-box1 flex-1 ">
               <div className="h1 flex justify-center sm:justify-start mt-[90px] ">
