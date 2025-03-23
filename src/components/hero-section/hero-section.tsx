@@ -72,13 +72,13 @@ const HeroSection = () => {
                   <div className="card1img w-[152px] sm:w-[300px]   h-[80px] absolute left-[0px] sm:left-[-150px] bottom-[0px] sm:bottom-[100px] ">
                     <Image className=' ' src={herobox2card1} alt='card-header one' />
                   </div>
-                  <div className="sm:absolute top-[10px] w-[228px] left-[110px]  ">
+                  <div className=" hidden sm:block sm:absolute top-[10px] w-[228px] left-[110px]  ">
                     <Image src={imgherobox2card2} alt=''/>
                   </div>
-                  <div className="sm:absolute bottom-[-40px] w-[238px] right-[50px] ">
+                  <div className="hidden sm:block sm:absolute bottom-[-40px] w-[238px] right-[50px] ">
                     <Image src={imgherobox2card3} alt=''/>
                   </div>
-                </div>
+            </div>
           </div>
         </div>
         
