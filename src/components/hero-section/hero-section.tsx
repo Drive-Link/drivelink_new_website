@@ -5,17 +5,21 @@ import worldDrivers from '../../../public/world-avatar.png'
 import imgworldBgDesktop from '../../../public/map-bg 1.png'
 import imgworldBgmobile from '../../../public/map-bg 1 mobile.png'
 import box1arrow from '../../../public/box1arrowup.png'
-import herobox2card1 from '../../../public/herobox2card1.png'
+import herobox2card1 from '../../../public/Card header (3).png'
+import imgherobox2card2 from '../../../public/Card header 2box2.png'
+import imgherobox2card3 from '../../../public/Card header 3box3.png'
 
 const HeroSection = () => {
   return (
     <div className="hero-section bg-[rgba(235,241,255,0.6)] ">
-      <div className="hero-section-content max-w-[1200px] mx-auto  pb-[10px] px-[20px] sm:px-[0px] pt-[50px] border sm:flex ">
+      <div className="map sm:max-w-[1400px] sm:mx-auto sm:relative ">
+
+      <div className="hero-section-content max-w-[1200px] mx-auto min-h-[70vh]  pb-[10px] px-[20px] sm:px-[0px] pt-[50px]  sm:flex ">
         {/* desktop */}
         <div className="box1  sm:flex-1 ">
           {/* h1 */}
           <div className="h1 flex justify-center sm:justify-start   ">
-            <span className='text-[30px] sm:text-[62px] sm:leading-[72px] leading-[40px] font-[700] border sm:max-w-[600px] max-w-[400px] text-center sm:text-start sm:tracking-[-3%] ' >
+            <span className='text-[30px] sm:text-[62px] sm:leading-[72px] leading-[40px] font-[700]  sm:max-w-[600px] max-w-[400px] text-center sm:text-start sm:tracking-[-3%] ' >
             Find and Hire Verified Drivers <br className='hidden sm:block ' />
             <span className='text-[#101F91] ' > Fast and <br className='sm:hidden' />  Hassle-Free</span>
             </span>
@@ -54,21 +58,26 @@ const HeroSection = () => {
           </div>
         </div>
         {/* box2 */}
-        <div className="box2 border sm:flex-1 ">
+        <div className="box2  sm:flex-1 ">
           {/* world-drivers */}
           <div className="world-drivers mt-[40px] flex sm:mt-[0px] justify-center relative z-[1]  ">
             <div className="img sm:max-w-[600px] sm:w-[100%]  max-w-[400px] w-[100%] ">
               <Image className='' src={worldDrivers} alt='connecting to drivers'/>
             </div>
             {/* ab-el */}
-            <div className="absolu  sm:hidden ">
-                <div className="world-img-bg absolute top-[10%] left-[0px]  w-[100%] z-[0]  ">
+            <div className="absolu  ">
+                <div className="world-img-bg absolute top-[10%] left-[0px]  w-[100%] z-[0] sm:hidden  ">
                     <Image src={imgworldBgmobile} alt='hero world background' />
                 </div>
-                  <div className="card1img w-[152px] h-[80px] absolute left-[0px] bottom-[0px] ">
-                    <Image className='w-[100%] h-[100%] ' src={herobox2card1} alt='card-header one' />
+                  <div className="card1img w-[152px] sm:w-[300px]   h-[80px] absolute left-[0px] sm:left-[-150px] bottom-[0px] sm:bottom-[100px] ">
+                    <Image className=' ' src={herobox2card1} alt='card-header one' />
                   </div>
-
+                  <div className="sm:absolute top-[10px] w-[228px] left-[110px]  ">
+                    <Image src={imgherobox2card2} alt=''/>
+                  </div>
+                  <div className="sm:absolute bottom-[-40px] w-[238px] right-[50px] ">
+                    <Image src={imgherobox2card3} alt=''/>
+                  </div>
                 </div>
           </div>
         </div>
@@ -92,6 +101,10 @@ const HeroSection = () => {
         </div>
         </div>
 
+      </div>
+        <div className="sm:absolute sm:top-[0px] sm:right-[0px] hidden sm:block ">
+          <Image src={imgworldBgDesktop} alt=''/>
+        </div>
       </div>
     </div>
     // <div className="hero-section  bg-[rgba(182,204,255,0.095)]  ">
