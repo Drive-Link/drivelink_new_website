@@ -14,7 +14,7 @@ const HeroSection = () => {
     <div className="hero-section bg-[rgba(235,241,255,0.6)] ">
       <div className="map sm:max-w-[1400px] sm:mx-auto sm:relative ">
 
-      <div className="hero-section-content max-w-[1200px] mx-auto min-h-[70vh]  pb-[10px] px-[20px] sm:px-[0px] pt-[50px]  sm:flex ">
+      <div className="hero-section-content max-w-[1200px] mx-auto min-h-[80vh]  pb-[10px] px-[20px] sm:px-[0px] pt-[50px]  sm:flex ">
         {/* desktop */}
         <div className="box1  sm:flex-1 ">
           {/* h1 */}
