@@ -11,7 +11,7 @@ import imgherobox2card3 from '../../../public/Card header 3box3.png'
 
 const HeroSection = () => {
   return (
-    <div className="hero-section bg-[rgba(235,241,255,0.6)] ">
+    <div className="hero-section bg-[#EBF1FF] ">
       <div className="map sm:max-w-[1400px] sm:mx-auto sm:relative ">
 
       <div className="hero-section-content max-w-[1200px] mx-auto min-h-[80vh]  pb-[10px] px-[20px] sm:px-[0px] pt-[50px]  sm:flex ">
