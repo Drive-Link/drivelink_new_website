@@ -16,13 +16,13 @@ const DownloadApp = () => {
 
         <div className=" max-w-[1200px]  mx-[auto]  px-[20px] bg-[black] rounded-[20px] flex flex-col sm:flex-row sm:bg-[#030729] sm:px-[50px] ">
           {/* boxes */}
-            <div className="download-box1 flex-1 ">
+            <div className="download-box1 flex-[1.2] ">
               <div className="h1 flex justify-center sm:justify-start mt-[90px] ">
                   <span className='font-[700] text-[26px] sm:text-[40px] leading-[39px] text-[white]  max-w-[250px] text-center sm:max-w-[500px] sm:text-start ' >
                   Drive Smarter, Ride Safer Anytime, Anywhere!
                   </span>
               </div>
-              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center sm:text-start sm:w-[600px] text-opacity-75 sm:text-[18px] sm:leading-[28px] tracking-[0%] ' >
+              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center sm:text-start  sm:max-w-[600px] text-opacity-75 sm:text-[18px] sm:leading-[28px] tracking-[0%] ' >
               Join thousands of verified drivers and car owners enjoying seamless rides with just a tap. Book or drive with confidence, earn effortlessly, and experience true convenience.
               </p>
               {/* btn-group */}
