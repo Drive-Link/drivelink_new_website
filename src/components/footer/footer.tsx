@@ -5,6 +5,7 @@ import imgLinkedin  from '../../../public/linkedin.png'
 import imgFacebook  from '../../../public/facebook icon.png'
 import imgTwitter  from '../../../public/pajamas_twitter.png'
 import imgInstagram  from '../../../public/instagram icon.png'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -35,9 +36,15 @@ const Footer = () => {
             <div className="desktop sm:flex sm:justify-between sm:mt-[30px] ">
             {/* footer-links */}
             <div className="grp-page flex justify-center gap-[10px] mt-[30px] sm:mt-[0px] font-[400] text-[14px] sm:text-[16px] text-[#2E396D] order-2 cursor-pointer ">
-                <div>Terms</div>
-                <div>Privacy</div>
-                <div>Cookies</div>
+                <div className=' hover:underline decoration-[#2E396D] ' > <Link href={'/terms'} >
+                Terms
+                </Link></div>
+                <div className=' hover:underline decoration-[#2E396D] ' > <Link href={''} > 
+                 Privacy
+                </Link> </div>
+                <div className=' hover:underline decoration-[#2E396D] ' > <Link href={''} >
+                Cookies
+                </Link></div>
             </div>
             {/* footer-icons */}
             <div className="footericon-grp mt-[30px] sm:mt-[0px] flex justify-center gap-4 order-3 cursor-pointer ">
@@ -56,11 +63,18 @@ const Footer = () => {
             </div>
             {/* footer logo */}
             <div className="footerlogo flex justify-center mt-[30px] sm:mt-[0px] order-1  ">
-            <div className="logo w-[135px] flex items-center justify-between ">
+            <div className="logo w-[135px] flex items-center justify-between cursor-pointer ">
+
           <div className="drivelink-img w-[42px] ">
+            <Link href={'/'}>
           <Image src={img} alt='Drivelink icon' />
+            </Link>
           </div>
-          <span className='text-[20px] text-[#2E396D] font-[500]'>Drivelink</span>
+          <span className='text-[20px] text-[#2E396D] font-[500]'>
+          <Link href={'/'}>
+            Drivelink
+          </Link>
+            </span>
             </div>
             </div>
             </div>

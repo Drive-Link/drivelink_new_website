@@ -2,16 +2,24 @@ import React from 'react'
 import Image from 'next/image'
 import img  from '../../../public/drivelink-icon.png'
 import menu  from '../../../public/menu.png'
+import Link from 'next/link'
 
 const Header = () => {
   return (
     <div className=' header bg-[#EBF1FF] ' >
       <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center bg-[rgba(182,204,255,0.095)] p-[20px] sm:p-0 ">
-        <div className="logo w-[135px] flex items-center justify-between ">
+        <div className="logo w-[135px] flex items-center justify-between cursor-pointer ">
+          
           <div className="drivelink-img w-[42px] ">
+          <Link href={'/'}>
           <Image src={img} alt='Drivelink icon' />
+          </Link>
           </div>
-          <span className='text-[20px] text-[#2E396D] font-[500]'>Drivelink</span>
+          <span className='text-[20px] text-[#2E396D] font-[500]'>
+          <Link href={'/'}>
+            Drivelink
+          </Link>
+            </span>
         </div>
         <nav className='hidden sm:block' >
             <ul className='flex text-[16px] w-[325px] justify-between font[400]   ' >
