@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <div className=' header bg-[#EBF1FF] ' >
+    <div className=' header bg-[#EBF1FF]  ' >
       <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center bg-[rgba(182,204,255,0.095)] p-[20px] sm:p-0 ">
         <div className="logo w-[135px] flex items-center justify-between cursor-pointer ">
           
@@ -29,7 +29,11 @@ const Header = () => {
             </ul>
         </nav>
         <div className="nav-btn font-[400] flex gap-[16px] hidden sm:flex  ">
-          <button className='bg-white w-[120px] h-[44px] text-[#101f91] font-[400] p-[16px] flex justify-center items-center d-block  rounded-[8px] cursor-pointer '>Contact us</button>
+        <Link href={'/contact'}>
+          <button className='bg-white w-[120px] h-[44px] text-[#101f91] font-[400] p-[16px] flex justify-center items-center d-block  rounded-[8px] cursor-pointer '>
+          Contact us
+            </button>
+        </Link>
           <button className='bg-[#101f91] text-white w-[128px] h-[44px] font-[400] p-[16px] rounded-[8px] flex justify-center items-center d-block cursor-pointer '>Download</button>
         </div>
         <div  className="mobile-icon w-[15px] h-[13px] sm:hidden  ">
