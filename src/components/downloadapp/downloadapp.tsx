@@ -22,7 +22,7 @@ const DownloadApp = () => {
                   Drive Smarter, Ride Safer Anytime, Anywhere!
                   </span>
               </div>
-              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center sm:text-start  sm:max-w-[600px] text-opacity-75 sm:text-[18px] sm:leading-[28px] tracking-[0%] ' >
+              <p className='mt-[20px] font-[400] text-[16px] leading-[25px] text-[white] text-center sm:text-start  sm:max-w-[600px] opacity-75 sm:text-[18px] sm:leading-[28px] tracking-[0%] ' >
               Join thousands of verified drivers and car owners enjoying seamless rides with just a tap. Book or drive with confidence, earn effortlessly, and experience true convenience.
               </p>
               {/* btn-group */}
