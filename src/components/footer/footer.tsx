@@ -18,7 +18,9 @@ const Footer = () => {
                 <div className="bx1  text-center sm:text-start">About us</div>
                 <div className="bx1  text-center sm:text-start ">How it works</div>
                 <div className="bx1  text-center sm:text-start ">Services</div>
+                <Link href='/contact'>
                 <div className="bx1  text-center sm:text-start ">Contact us</div>
+                </Link>
             </div>
             <div className="formy sm:mt-[50px]  ">
                 <form className='sm:flex sm:items-center  sm:bg-[white] sm:rounded-[50px] sm:px-[10px] sm:py-[2px] sm:w-[500px] ' action="" method="post">
