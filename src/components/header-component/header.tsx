@@ -23,9 +23,9 @@ const Header = () => {
         </div>
         <nav className='hidden sm:block' >
             <ul className='flex text-[16px] w-[325px] justify-between font[400]   ' >
-              <li className='cursor-pointer'>About us</li>
-              <li className='font-[400] cursor-pointer'>How it Works</li>
-              <li className='cursor-pointer'>Services</li>
+              <li className='cursor-pointer hover:underline '>About us</li>
+              <li className='font-[400] cursor-pointer hover:underline'>How it Works</li>
+              <li className='cursor-pointer hover:underline'>Services</li>
             </ul>
         </nav>
         <div className="nav-btn font-[400] flex gap-[16px] hidden sm:flex  ">
