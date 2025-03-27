@@ -17,7 +17,7 @@ import aboutlinebox3 from '../../../public/aboutline-box-3.png'
 const About = () => {
   return (
    <div className="about-section">
-    <div className="section-content p-[20px] min-h-[80vh]  max-w-[1200px] mx-[auto] sm:p-0 ">
+    <div className="section-content p-[20px] sm:pb-[80px] min-h-[80vh]  max-w-[1200px] mx-[auto] sm:p-0 ">
       <div className="headerabout flex justify-center sm:mt-[80px] ">
         <span className='text-center font-[700] text-[25px] sm:text-[56px] max-w-[400px] sm:max-w-[800px] d-block sm:leading-[100%] ' >How Our Driver App Works:  <span className='text-[#101f91] ' >Simple and Fast </span> </span>
       </div>
@@ -25,11 +25,11 @@ const About = () => {
         <p className=' text-[#828589] text-[16px] sm;text-[20px] sm:leading-[26px] font-[400] leading-[22px] text-center   max-w-[380px] sm:max-w-[610px] ' >Getting started as a car owner who wants to hire a professional driver has never been easier. Let’s show  you how it’s done in these easy steps</p>
       </div>
       {/* boxes */}
-      <div className="flex justify-center sm:mt-[30px] ">
+      <div className="flex justify-center sm:mt-[30px]  ">
 
-      <div className="about-boxes   gap-[50px] sm:gap-x-[90px] sm:gap-y-[90px]  grid grid-cols-1 sm:grid-cols-2  sm:mt-[30px] mt-[40px]  sm:w-[100%] ">
+      <div className="about-boxes   gap-[44px] sm:gap-x-[44px] sm:gap-y-[44px]  grid grid-cols-1 sm:grid-cols-2  sm:mt-[30px] mt-[40px]  sm:max-w-[1200px] sm:w-[100%]  ">
         {/* box1 */}
-        <div className="about-box1   max-w-[550px]  bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
+        <div className="about-box1   max-w-[600px]  bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
           {/* icon and h1 */}
           <div className="flex  flex-col gap-[30px] mt-[30px] sm:flex-row sm:items-center sm:gap-[20px] ">
 
@@ -62,7 +62,7 @@ const About = () => {
           </div>
         </div>
         {/* box2 */}
-        <div className="about-box1   max-w-[550px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden py-[0px] ">
+        <div className="about-box1   max-w-[600px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden py-[0px] ">
           {/* icon and h1 */}
           <div className="flex  flex-col gap-[30px] mt-[30px] sm:flex-row sm:items-center sm:gap-[20px] ">
 
@@ -103,7 +103,7 @@ const About = () => {
           </div>
         </div>
        {/* box3 */}
-       <div className="about-box1   max-w-[550px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
+       <div className="about-box1   max-w-[600px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
           {/* icon and h1 */}
           <div className="flex  flex-col gap-[30px] mt-[30px] sm:flex-row sm:items-center sm:gap-[20px] ">
 
@@ -140,7 +140,7 @@ const About = () => {
           </div>
         </div>
        {/* box4 */}
-       <div className="about-box1   max-w-[550px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
+       <div className="about-box1   max-w-[600px] flex-1 bg-[#F4F7FF] px-[16px] sm:px-[26px] sm:rounded-[7px]  overflow-hidden sm:overflow-hidden ">
           {/* icon and h1 */}
           <div className="flex  flex-col gap-[30px] mt-[30px] sm:flex-row sm:items-center sm:gap-[20px] ">
 

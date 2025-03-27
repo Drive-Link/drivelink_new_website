@@ -11,7 +11,7 @@ import whyusicon4 from '../../../public/whyusicon4.png'
 
 const Whyus = () => {
   return (
-    <div className="whyus-section">
+    <div className="whyus-section bg-[#101F91] ">
         <div className="whyus-content max-w-[1200px] mx-[auto] min-h-[80vh] bg-[#101F91] px-[20px] pb-[50px]  ">
         <div className="headerabout flex justify-center  ">
         <span className='text-center font-[500] text-[25px] sm:text-[56px] d-block  max-w-[400px] text-[white] mt-[50px] ' >Why Drivelink ?</span>
@@ -20,7 +20,7 @@ const Whyus = () => {
         <p className=' text-[white] text-[16px] font-[400] leading-[22px] text-center   max-w-[380px] sm:max-w-[610px] ' >We help you get verified professional drivers at your service. You will be picked up and driven wherever you need, safely and efficiently with so much ease.</p>
       </div>
       {/* grid */}
-      <div className="whyus-grp grid grid-cols-1 sm:px-[4%] ">
+      <div className="whyus-grp grid grid-cols-1  ">
         {/* imag and cards */}
         <div className="whyus1grid flex flex-col mt-[50px] items-center gap-[30px] sm:flex-row  ">
           {/* img */}
