@@ -14,7 +14,7 @@ const Footer = () => {
             {/* desktop */}
             <div className="sm:flex sm:justify-between sm:items-center ">
 
-            <div className="link-grp grid grid-cols-2 gap-8 p-8 sm:p-0  font-[400] text-[20px] sm:text-[15px] sm:opacity-[75%] text-[#2E396D] sm:flex  sm:mt-[50px] cursor-pointer   ">
+            <div className="link-grp grid grid-cols-2 gap-8 p-8 sm:p-0  font-[400] text-[20px] sm:text-[15px] opacity-[75%] sm:opacity-[75%] text-[#2E396D] sm:flex  sm:mt-[50px] cursor-pointer   ">
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline">About us</div>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">How it works</div>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Services</div>
@@ -25,7 +25,7 @@ const Footer = () => {
             <div className="formy sm:mt-[50px]  ">
                 <form className='sm:flex sm:items-center  sm:bg-[white] sm:rounded-[50px] sm:px-[10px] sm:py-[2px] sm:w-[500px] ' action="" method="post">
                     <div className="form-grp sm:flex-1   ">
-                        <input className='w-[100%] rounded-[50px] px-[20px] py-[10px]   placeholder-gray-500 placeholder-opacity-50 bg-[white] outline-none ' type="text" placeholder='Enter email' />
+                        <input className='w-[100%] rounded-[50px] px-[20px] py-[10px]   placeholder-gray-500 placeholder-opacity-50 text-[14px] bg-[white] outline-none ' type="text" placeholder='Enter email' />
                     </div>
                     <div className="form-grp mt-[10px] sm:mt-[0px]  ">
                         <button className='bg-[#101F91] w-[100%] rounded-[50px] px-[20px] py-[10px] text-[white] cursor-pointer  ' type="submit">Subscribe</button>
@@ -37,7 +37,7 @@ const Footer = () => {
             {/* desktop */}
             <div className="desktop sm:flex sm:justify-between sm:mt-[30px] ">
             {/* footer-links */}
-            <div className="grp-page mx-[auto] flex justify-between w-[100%] max-w-[250px] sm:max-w-[300px]   gap-[35px] sm:gap-[45px] mt-[30px] sm:mt-[0px] font-[400] text-[14px] sm:text-[14px] text-[#2E396D] order-2 cursor-pointer ">
+            <div className="grp-page mx-[auto] flex justify-between w-[100%] max-w-[250px] sm:max-w-[250px]   gap-[35px] sm:gap-[45px] mt-[30px] sm:mt-[0px] font-[400] text-[14px] sm:text-[14px] text-[#2E396D] order-2 cursor-pointer ">
                 <div className=' hover:underline decoration-[#2E396D]  ' > <Link href={'/terms'} >
                 Terms
                 </Link></div>
