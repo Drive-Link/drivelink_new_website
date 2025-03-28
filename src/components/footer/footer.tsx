@@ -37,7 +37,7 @@ const Footer = () => {
             {/* desktop */}
             <div className="desktop sm:flex sm:justify-between sm:mt-[30px] ">
             {/* footer-links */}
-            <div className="grp-page flex  gap-[10px] sm:gap-[35px] mt-[30px] sm:mt-[0px] font-[400] text-[14px] sm:text-[14px] text-[#2E396D] order-2 cursor-pointer ">
+            <div className="grp-page mx-[auto] flex justify-between w-[100%] max-w-[250px] sm:max-w-[300px]   gap-[35px] sm:gap-[45px] mt-[30px] sm:mt-[0px] font-[400] text-[14px] sm:text-[14px] text-[#2E396D] order-2 cursor-pointer ">
                 <div className=' hover:underline decoration-[#2E396D]  ' > <Link href={'/terms'} >
                 Terms
                 </Link></div>
