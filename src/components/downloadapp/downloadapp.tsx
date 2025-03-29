@@ -16,7 +16,7 @@ import lines from '../../../public/lines.png'
 
 const DownloadApp = () => {
   return (
-    <div className="downloadapp-section bg-[white]">
+    <div className="downloadapp-section bg-[white]" id='download' >
       <div className="downloadapp-content  max-w-[1200px] min-h-[80vh]  mx-[auto] px-[20px] py-[40px] relative sm:flex sm:justify-center sm:flex-col ">
 
         <div className=" max-w-[1200px]  mx-[auto]  px-[20px] sm:px-[0px] bg-[black] rounded-[20px] flex flex-col sm:flex-row sm:bg-[#030729] sm:px-[50px]  ">
@@ -53,10 +53,10 @@ const DownloadApp = () => {
                   </div>
                 </div> */}
                 {/* copy paste */}
-                 <div className="btn-2 w-[135px] h-[45px] ">
+                 <div className="btn-2 w-[135px] border  h-[45px] cursor-pointer ">
                   <Image className='w-[100%] h-[100%]' src={playbtn} alt='' />
                 </div>
-                <div className="btn-2 w-[135px] h-[45px] ">
+                <div className="btn-2 w-[135px] h-[45px] border cursor-pointer ">
                   <Image className='w-[100%] h-[100%]' src={appstore} alt='' />
                   {/* <div className="btn-box1"></div>
                   <div className="btn-box2">
@@ -82,7 +82,7 @@ const DownloadApp = () => {
                     <div className="star7 absolute sm:right-[10px] sm:z-[2] sm:top-[0px] w-[46px] sm:w-[60px] ">
                       <Image src={imgspeech7} alt='star icon'/>
                     </div>
-                    <div className="star7  border right-[0px] bottom-[0px] sm:bottom-[100px] absolute sm:left-[-250px] sm:z-[2]  w-[46px] sm:w-[70px] ">
+                    <div className="star7   right-[0px] bottom-[0px] sm:bottom-[100px] absolute sm:left-[-250px] sm:z-[2]  w-[46px] sm:w-[70px] ">
                       <Image src={imgstar8} alt='star icon'/>
                     </div>
              </div>

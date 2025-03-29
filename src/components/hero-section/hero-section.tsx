@@ -8,6 +8,7 @@ import box1arrow from '../../../public/box1arrowup.png'
 import herobox2card1 from '../../../public/Card header (3).png'
 import imgherobox2card2 from '../../../public/Card header 2box2.png'
 import imgherobox2card3 from '../../../public/Card header 3box3.png'
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (
@@ -35,8 +36,10 @@ const HeroSection = () => {
             <button className='bg-[#101f91] text-white w-[131px] h-[48px] font-[400] py-[16px] px-[23px] rounded-[4px] flex justify-center items-center d-block cursor-pointer '>
               Get Started
             </button>
+            <Link href={'#download'} >
             <button className='bg-white w-[157px] h-[48px] text-[#101f91] font-[400] py-[16px] px-[23px] flex justify-center items-center d-block  rounded-[4px] cursor-pointer  '>Download App
             </button>
+            </Link>
           </div>
            {/* ava-group and p */}
           <div className="hidden sm:block sm:flex sm:flex-col sm:justify-start ">
