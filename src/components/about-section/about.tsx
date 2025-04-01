@@ -16,7 +16,7 @@ import aboutlinebox3 from '../../../public/aboutline-box-3.png'
 
 const About = () => {
   return (
-   <div className="about-section">
+   <div className="about-section  " id='how-it-works' >
     <div className="section-content p-[20px] sm:pb-[80px] min-h-[80vh]  max-w-[1200px] mx-[auto] sm:p-0 ">
       <div className="headerabout flex justify-center sm:mt-[80px] ">
         <span className='text-center font-[700] text-[25px] sm:text-[56px] max-w-[400px] sm:max-w-[800px] d-block sm:leading-[100%] ' >How Our Driver App Works:  <span className='text-[#101f91] ' >Simple and Fast </span> </span>

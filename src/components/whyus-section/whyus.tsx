@@ -11,7 +11,7 @@ import whyusicon4 from '../../../public/whyusicon4.png'
 
 const Whyus = () => {
   return (
-    <div className="whyus-section bg-[#101F91] ">
+    <div className="whyus-section bg-[#101F91] opacity-[100%] " id='about' >
         <div className="whyus-content max-w-[1200px] mx-[auto] min-h-[80vh] bg-[#101F91] px-[20px] pb-[50px]  ">
         <div className="headerabout flex justify-center  ">
         <span className='text-center font-[500] text-[25px] sm:text-[56px] d-block  max-w-[400px] text-[white] mt-[50px] ' >Why Drivelink ?</span>

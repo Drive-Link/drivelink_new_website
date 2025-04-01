@@ -45,13 +45,13 @@ const Forms
                             </div>
                         </div>
                         <div className="btn mt-[30px] ">
-                            <button className='w-[100%] py-[3px] rounded-[12px] text-[white] bg-[#101F91] cursor-pointer ' type="submit">Submit</button>
+                            <button className='w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] bg-[#101F91] cursor-pointer ' type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
                 {/* box2 */}
                 <div className="sm:flex-1 ">
-                    <div className="contactinfo bg-[#101F91] rounded-[28px] pt-[30px] px-[18px] mt-[50px] pb-[50px] sm:mt-[0px] ">
+                    <div className="contactinfo bg-[#101F91] rounded-[28px] pt-[30px] sm:px-[20px] px-[18px] mt-[50px] pb-[50px] sm:mt-[0px] ">
                         <div className="h1 text-[white] ">
                         <span className='font-[700] text-[20px] leading-[36px] tracking-[0px] ' >Contact Information</span>
                         </div>
@@ -72,28 +72,28 @@ const Forms
                             <p>support@usedrivelink.com</p>
                             </div>
                         </div>
-                        {/* box1 */}
+                        {/* box2 */}
                         <div className="box1 rounded-[24px] border border-[#DEDFE4] p-[18px]  bg-[rgba(225,225,225,0.1)] mt-[30px] ">
                             <div className="span text-white ">
-                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Email Support</span>
+                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Chat to Sales</span>
                             </div>
                             <div className="p mt-[14px] text-[14px] font-[400] leading-[20px] text-white opacity-75 ">
-                                <p>Interested in switching? speak to our team.</p>
+                                <p>Reach out to our sales team for fast,personalized support.</p>
                             </div>
                             <div className="intouch  mt-[14px] text-[16px] font-[400] leading-[24px] text-white opacity-[90%] underline ">
-                            <p>support@usedrivelink.com</p>
+                            <p>Mondays to Sundays: 8am-7pm </p>
                             </div>
                         </div>
-                        {/* box1 */}
+                        {/* box3 */}
                         <div className="box1 rounded-[24px] border border-[#DEDFE4] p-[18px]  bg-[rgba(225,225,225,0.1)] mt-[30px] ">
                             <div className="span text-white ">
-                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Email Support</span>
+                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Call Us</span>
                             </div>
                             <div className="p mt-[14px] text-[14px] font-[400] leading-[20px] text-white opacity-75 ">
-                                <p>Interested in switching? speak to our team.</p>
+                                <p>Give us a call for immediate assistance.</p>
                             </div>
                             <div className="intouch  mt-[14px] text-[16px] font-[400] leading-[24px] text-white opacity-[90%] underline ">
-                            <p>support@usedrivelink.com</p>
+                            <p>+234905-968-5515</p>
                             </div>
                         </div>
                     </div>

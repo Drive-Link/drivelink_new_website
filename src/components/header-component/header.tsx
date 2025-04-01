@@ -6,8 +6,9 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <div className=' header bg-[#EBF1FF]  ' >
-      <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center bg-[rgba(182,204,255,0.095)] p-[20px] sm:p-0 ">
+    // fixed top-0 left-0 w-full z-[99]
+    <div className=' header bg-[rgba(235,241,255,0.3)]   ' >
+      <div className="header-content min-h-[10vh] max-w-[1200px] mx-[auto] flex justify-between items-center  p-[20px] sm:p-0  ">
         <div className="logo w-[135px] flex items-center justify-between cursor-pointer ">
           
           <div className="drivelink-img w-[42px] ">
@@ -23,8 +24,12 @@ const Header = () => {
         </div>
         <nav className='hidden sm:block' >
             <ul className='flex text-[16px] w-[325px] justify-between font[400]   ' >
+              <Link href={'#about'}>
               <li className='cursor-pointer hover:underline '>About us</li>
+              </Link>
+              <Link href={'#how-it-works'}>
               <li className='font-[400] cursor-pointer hover:underline'>How it Works</li>
+              </Link>
               <li className='cursor-pointer hover:underline'>Services</li>
             </ul>
         </nav>

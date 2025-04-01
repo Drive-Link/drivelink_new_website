@@ -15,17 +15,21 @@ const Footer = () => {
             <div className="sm:flex sm:justify-between sm:items-center ">
 
             <div className="link-grp grid grid-cols-2 gap-8 p-8 sm:p-0  font-[400] text-[20px] sm:text-[15px] opacity-[75%] sm:opacity-[75%] text-[#2E396D] sm:flex  sm:mt-[50px] cursor-pointer   ">
+                <Link href={'#about'}>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline">About us</div>
+                </Link>
+                <Link href={'#how-it-works'}>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">How it works</div>
+                </Link>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Services</div>
                 <Link href='/contact'>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Contact us</div>
                 </Link>
             </div>
             <div className="formy sm:mt-[50px]  ">
-                <form className='sm:flex sm:items-center  sm:bg-[white] sm:rounded-[50px] sm:px-[10px] sm:py-[2px] sm:w-[500px] ' action="" method="post">
+                <form className='sm:flex sm:items-center  sm:border sm:border-[#949494] sm:border-opacity-[50%]  sm:bg-[white] sm:rounded-[50px] sm:px-[10px] sm:py-[2px] sm:w-[500px] ' action="" method="post">
                     <div className="form-grp sm:flex-1   ">
-                        <input className='w-[100%] rounded-[50px] px-[20px] py-[10px]   placeholder-gray-500 placeholder-opacity-50 text-[14px] bg-[white] outline-none ' type="text" placeholder='Enter email' />
+                        <input className='w-[100%] rounded-[50px] px-[20px]  border sm:border-0  border-[#949494] border-opacity-[50%] py-[10px]   placeholder-gray-500 placeholder-opacity-50 text-[14px] bg-[white] outline-none ' type="text" placeholder='Enter email' />
                     </div>
                     <div className="form-grp mt-[10px] sm:mt-[0px]  ">
                         <button className='bg-[#101F91] w-[100%] rounded-[50px] px-[20px] py-[10px] text-[white] cursor-pointer  ' type="submit">Subscribe</button>
@@ -50,18 +54,29 @@ const Footer = () => {
             </div>
             {/* footer-icons */}
             <div className="footericon-grp mt-[30px] sm:mt-[0px] flex justify-center gap-4 order-3 cursor-pointer ">
+                <Link href={'https://www.linkedin.com/company/drive-link/'}>
                 <div className="icon-bg bg-[white] w-[35px] h-[35px] rounded-[100%] flex justify-center items-center ">
                     <Image src={imgLinkedin} alt='linkedin link' />
                 </div>
+                </Link>
+                <Link href={'https://web.facebook.com/people/DriveLink/61556268306322/?mibextid=2JQ9oc'}>
                 <div className="icon-bg bg-[white] w-[35px] h-[35px] rounded-[100%] flex justify-center items-center  ">
                     <Image src={imgFacebook} alt='facebook link' />
                 </div>
+
+                </Link>
+                <Link href={'https://x.com/drivelink_offic'}>
+
                 <div className="icon-bg bg-[white] w-[35px] h-[35px] rounded-[100%] flex justify-center items-center  ">
                     <Image src={imgTwitter} alt='twitter link' />
                 </div>
+                </Link>
+                <Link href={'https://www.instagram.com/drivelink_official/'}>
+
                 <div className="icon-bg bg-[white] w-[35px] h-[35px] rounded-[100%] flex justify-center items-center  ">
                     <Image src={imgInstagram} alt='instagram link' />
                 </div>
+                </Link>
             </div>
             {/* footer logo */}
             <div className="footerlogo flex justify-center mt-[30px] sm:mt-[0px] order-1  ">
