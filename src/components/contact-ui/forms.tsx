@@ -1,39 +1,116 @@
+"use client";
 import Link from 'next/link'
 import React from 'react'
-
+import { useState } from "react";
 const Forms
  = () => {
+    const [formData, setFormData] = useState({ 
+        lastname: "",
+        firstname:'', 
+        email: "", 
+        message: "",
+        privacyChecked: false });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement|any>) => {
+    const { name, type, value, checked } = e.target;
+    setFormData({
+        ...formData,
+        [name]: type === "checkbox" ? checked : value, // Fix checkbox issue
+    });
+};
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.privacyChecked) {
+        setStatus("Please agree to the Privacy Policy.");
+        return;
+      }
+    setStatus("Sending...");
+
+    try {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              firstname: formData.firstname,
+              lastname: formData.lastname,
+              email: formData.email,
+              message: formData.message,
+            }),
+          });
+
+      const data = await res.json();
+      if (res.ok) {
+        console.log('okay')
+        setStatus("Message sent successfully!");
+        setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
+      } else {
+        console.log('not good')
+        setStatus("Failed to send message.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("Something went wrong.");
+    }
+  };
+
   return (
     <div className='forms bg-[#EBF1FF] ' >
         <div className="forms-content min-h-[90vh] mx-auto max-w-[1200px] px-[20px] py-[20px] sm:pb-[100px] ">
             <div className="formsgroup bg-[white] rounded-[16px] sm:rounded-[32px] sm:flex sm:gap-[50px] sm:py-[30px] sm:px-[18px] sm:flex-row-reverse shadow-lg px-[18px] py-[30px] ">
                 {/* box1 */}
                 <div className="formbox1 sm:flex-1 ">
-                    <form action="">
+                    <form onSubmit={handleSubmit} >
                         <div className="form-group mt-[30px]">
                             <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Last Name</label>
-                            <input className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
+                            <input 
+                            value={formData.lastname}
+                            onChange={handleChange}
+                            name='lastname'
+                            required
+                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
                         </div>
                         {/* lastname */}
                         <div className="form-group mt-[30px]">
                             <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">First Name</label>
-                            <input className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
+                            <input 
+                            value={formData.firstname}
+                            onChange={handleChange}
+                            name='firstname'
+                            required
+                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
                         </div>
                         {/* Email */}
                         <div className="form-group mt-[30px]">
                             <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Email</label>
-                            <input className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="email" />
+                            <input 
+                             value={formData.email}
+                             onChange={handleChange}
+                             name='email'
+                             required
+                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="email" />
                         </div>
                         {/* textarea */}
                         <div className="form-group mt-[30px]">
                             <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Message</label>
                             
-                            <textarea className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] min-h-[180px] '  ></textarea>
+                            <textarea 
+                             value={formData.message}
+                             onChange={handleChange}
+                             name='message'
+                             required
+                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] min-h-[180px] '  ></textarea>
                         </div>
                         {/* terms */}
                         <div className="privacy-policy flex mt-[20px] items-start gap-[3px] ">
                             <div>
-                            <input className='border border-[#90979E] cursor-pointer ' type="checkbox" name="" id="" />
+                            <input 
+                            type="checkbox"
+                            name="privacyChecked"
+                            checked={formData.privacyChecked}
+                            onChange={handleChange}
+                            className='border border-[#90979E] cursor-pointer '   id="" />
                             </div>
                             <div className="">
                                 <p className='text-[14px] font-[400] leading-[20px] text-[#90979E] max-w-[270px] sm:max-w-[490px] ' >
