@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className="footer bg-[#E8F1FF] ">
+    <div className="footer bg-[#E8F1FF] " id='footer' >
         <div className="footer-content max-w-[1200px] mx-[auto] px-[20px] sm:px-[0px] pb-[50px] ">
             {/* desktop */}
             <div className="sm:flex sm:justify-between sm:items-center ">
@@ -21,7 +21,7 @@ const Footer = () => {
                 <Link href={'#how-it-works'}>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">How it works</div>
                 </Link>
-                <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Services</div>
+                {/* <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Services</div> */}
                 <Link href='/contact'>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Contact us</div>
                 </Link>

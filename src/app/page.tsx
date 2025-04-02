@@ -1,24 +1,30 @@
+"use client";
 import About from '@/components/about-section/about'
 import DownloadApp from '@/components/downloadapp/downloadapp'
 import HeroSection from '@/components/hero-section/hero-section'
 import Whyus from '@/components/whyus-section/whyus'
+import { useSectionRef } from '@/context/SectionRefContext';
 import React from 'react'
-// import { useRef } from "react";
+import { useRef } from "react";
 const page = () => {
-  // const hoomesection1Ref = useRef<HTMLDivElement | null >(null);
-  // const aboutsection2Ref = useRef<HTMLDivElement | null >(null);
-  // const howitworksection3Ref = useRef<HTMLDivElement | null >(null);
-  // const downloadsection3Ref = useRef<HTMLDivElement | null >(null);
-
-  // const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-  //   ref.current?.scrollIntoView({ behavior: "smooth" });
-  // };
+  // Use refs for each section
+  const { heroSectionRef, aboutSectionRef, howSectionRef, downloadAppSectionRef } = useSectionRef();
   return (
    <div className="app bg-white min-h-[100vh]">
+    <div ref={heroSectionRef} id='heroSection' >
     <HeroSection/>
+    </div>
+    <div ref={howSectionRef} id='howSection' >
     <About/>
+    </div>
+    <div ref={aboutSectionRef} id='aboutSection' >
+
     <Whyus/>
+    </div>
+    <div ref={downloadAppSectionRef} id='downloadAppSection' >
+
     <DownloadApp />
+    </div>
    </div>
   )
 }
