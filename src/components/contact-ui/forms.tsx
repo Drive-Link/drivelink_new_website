@@ -1,65 +1,66 @@
 "use client";
-import Link from 'next/link'
-import React, { useRef } from 'react'
-import { useState } from "react";
-const Forms
- = () => {
-    const [formData, setFormData] = useState({ 
-        lastname: "",
-        firstname:'', 
-        email: "", 
-        message: "",
-        privacyChecked: false });
+import React, { useRef, useState, useEffect } from "react";
+import Link from "next/link";
+
+const Forms = () => {
+  const [formData, setFormData] = useState({
+    lastname: "",
+    firstname: "",
+    email: "",
+    message: "",
+    privacyChecked: false,
+  });
+
   const [status, setStatus] = useState("");
-  const [message, setMessage] = useState(""); // Message feedback
-
-//   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-//   func
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement|any>) => {
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | any >
+  ) => {
     const { name, type, value, checked } = e.target;
-    setFormData({
-        ...formData,
-        [name]: type === "checkbox" ? checked : value, // Fix checkbox issue
-    });
-};
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.privacyChecked) {
-        setStatus("Please agree to the Privacy Policy.");
-        console.log(status)
-        return;
-      }
+      setStatus("Please agree to the Privacy Policy");
+      return;
+    }
+
     setStatus("Sending...");
 
     try {
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              firstname: formData.firstname,
-              lastname: formData.lastname,
-              email: formData.email,
-              message: formData.message,
-            }),
-          });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstname: formData.firstname,
+          lastname: formData.lastname,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
       const data = await res.json();
-      if (res.ok) {
-        console.log('okay')
-        setStatus("Message sent successfully!");
-        // setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
-        // reset form
-        setTimeout(() => {
-            setStatus(""); 
-            setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
 
-          }, 2000);
+      if (res.ok) {
+        setStatus("Message sent successfully!");
+        setTimeout(() => {
+          setStatus("");
+          setFormData({
+            lastname: "",
+            firstname: "",
+            email: "",
+            message: "",
+            privacyChecked: false,
+          });
+        }, 2000);
       } else {
-        console.log('not good')
         setStatus("Failed to send message.");
       }
     } catch (error) {
@@ -68,150 +69,170 @@ const Forms
     }
   };
 
+  useEffect(() => {
+    if (status === "Please agree to the Privacy Policy") {
+      const timer = setTimeout(() => setStatus(""), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
+  const getButtonLabel = () => {
+    switch (status) {
+      case "Sending...":
+        return "Sending...";
+      case "Message sent successfully!":
+        return "Success!";
+      case "Failed to send message.":
+        return "Failed";
+      default:
+        return "Submit";
+    }
+  };
+
   return (
-    <div className='forms bg-[#EBF1FF] ' >
-        <div className="forms-content min-h-[90vh] mx-auto max-w-[1200px] px-[20px] py-[20px] sm:pb-[100px] ">
-            <div className="formsgroup bg-[white] rounded-[16px] sm:rounded-[32px] sm:flex sm:gap-[50px] sm:py-[30px] sm:px-[18px] sm:flex-row-reverse shadow-lg px-[18px] py-[30px] ">
-                {/* box1 */}
-                <div className="formbox1 sm:flex-1 ">
-                    <form ref={formRef} onSubmit={handleSubmit} >
-                        <div className="form-group mt-[30px]">
-                            <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Last Name</label>
-                            <input 
-                            value={formData.lastname}
-                            onChange={handleChange}
-                            name='lastname'
-                            required
-                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
-                        </div>
-                        {/* lastname */}
-                        <div className="form-group mt-[30px]">
-                            <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">First Name</label>
-                            <input 
-                            value={formData.firstname}
-                            onChange={handleChange}
-                            name='firstname'
-                            required
-                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="text" />
-                        </div>
-                        {/* Email */}
-                        <div className="form-group mt-[30px]">
-                            <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Email</label>
-                            <input 
-                             value={formData.email}
-                             onChange={handleChange}
-                             name='email'
-                             required
-                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] ' type="email" />
-                        </div>
-                        {/* textarea */}
-                        <div className="form-group mt-[30px]">
-                            <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Message</label>
-                            
-                            <textarea 
-                             value={formData.message}
-                             onChange={handleChange}
-                             name='message'
-                             required
-                            className='text-[16px] text-[#101828] leading-[24px] font-[400] outline-none px-[14px] py-[3px] border border-[#D0D5DD] rounded-[8px] w-[100%] min-h-[180px] '  ></textarea>
-                        </div>
-                        {/* terms */}
-                        <div className="privacy-policy flex mt-[20px] items-start gap-[3px] ">
-                            <div>
-                            <input 
-                            type="checkbox"
-                            name="privacyChecked"
-                            checked={formData.privacyChecked}
-                            onChange={handleChange}
-                            className='border border-[#90979E] cursor-pointer '   id="" 
-                            />
-                            
-                            </div>
-                            <div className="">
-                                <p className='text-[14px] font-[400] leading-[20px] text-[#90979E] max-w-[270px] sm:max-w-[490px] ' >
-                                By submitting this form, you agree to the processing of personal data according to our
-                                <Link href={'/terms'}>
-                                 <span className='cursor-pointer hover:text-[blue]  underline' >Privacy Policy.</span>  
-                                </Link>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="btn mt-[30px] ">
-                        {status==='Please agree to the Privacy Policy' && <p className='text-red-500 mb-[5px]' >{status}</p>}
-                        {/* bg-[#101F91]  */}
-                        {/* 'w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] cursor-pointer  ' */}
-                            <button 
-                            className={`w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] cursor-pointer ${status==='Message sent successfully!'?'bg-green-500 cursor-not-allowed opacity-50 ':' bg-[#101F91]'}  ${status==='Failed to send message.'?'bg-red-500':' bg-[#101F91]'}  `}
-                             type="submit" 
-                             disabled={status === 'Message sent successfully!'}
-                              >
-                                {status===''?'Submit':''}
-                                {status==='Please agree to the Privacy Policy'?'Submit':''}
-                                {status==='Sending...'?'Sending....':''}
-                                {status==='Message sent successfully!'?'successful!':''}
-                                {status==='Failed to send message.'?'Failed':''}
-                            </button>
-                            {/* handle error */}
-                            {status==='Something went wrong.'? ( <p className='text-red-500 mt-[5px]' >{status}</p>):( <p className='' ></p> )}
-                        </div>
-                    </form>
+    <div className="forms bg-[#EBF1FF]">
+      <div className="forms-content min-h-[90vh] mx-auto max-w-[1200px] px-[20px] py-[20px] sm:pb-[100px]">
+        <div className="formsgroup bg-white rounded-[16px] sm:rounded-[32px] sm:flex sm:gap-[50px] sm:py-[30px] sm:px-[18px] sm:flex-row-reverse shadow-lg px-[18px] py-[30px]">
+          {/* Form Section */}
+          <div className="formbox1 sm:flex-1">
+            <form ref={formRef} onSubmit={handleSubmit}>
+              {/* Last Name */}
+              <div className="form-group mt-[30px]">
+                <label className="block text-[14px] font-[500] mb-[6px] text-[#344054]">Last Name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-[#D0D5DD] rounded-[8px] px-[14px] py-[10px] text-[16px] text-[#101828] focus:outline-none focus:ring-2 focus:ring-[#101F91]"
+                />
+              </div>
+
+              {/* First Name */}
+              <div className="form-group mt-[30px]">
+                <label className="block text-[14px] font-[500] mb-[6px] text-[#344054]">First Name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-[#D0D5DD] rounded-[8px] px-[14px] py-[10px] text-[16px] text-[#101828] focus:outline-none focus:ring-2 focus:ring-[#101F91]"
+                />
+              </div>
+
+              {/* Email */}
+              <div className="form-group mt-[30px]">
+                <label className="block text-[14px] font-[500] mb-[6px] text-[#344054]">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-[#D0D5DD] rounded-[8px] px-[14px] py-[10px] text-[16px] text-[#101828] focus:outline-none focus:ring-2 focus:ring-[#101F91]"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="form-group mt-[30px]">
+                <label className="block text-[14px] font-[500] mb-[6px] text-[#344054]">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-[#D0D5DD] rounded-[8px] px-[14px] py-[10px] text-[16px] text-[#101828] min-h-[180px] resize-none focus:outline-none focus:ring-2 focus:ring-[#101F91]"
+                />
+              </div>
+
+              {/* Privacy Policy */}
+              <div className="privacy-policy flex mt-[20px] items-start gap-[10px]">
+                <input
+                  type="checkbox"
+                  name="privacyChecked"
+                  checked={formData.privacyChecked}
+                  onChange={handleChange}
+                  className="mt-[4px] border border-[#90979E] cursor-pointer"
+                />
+                <p className="text-[14px] font-[400] leading-[20px] text-[#90979E] max-w-[270px] sm:max-w-[490px]">
+                  By submitting this form, you agree to the processing of personal data according to our{" "}
+                  <Link href="/terms">
+                    <span className="underline hover:text-blue-600 cursor-pointer">Privacy Policy.</span>
+                  </Link>
+                </p>
+              </div>
+
+              {/* Submit Button */}
+              <div className="btn mt-[30px]">
+                {status === "Please agree to the Privacy Policy" && (
+                  <p className="text-red-500 mb-[5px]">{status}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={status === "Message sent successfully!"}
+                  className={`w-full py-[12px] rounded-[12px] text-white text-[16px] font-[600] transition duration-200 ${
+                    status === "Message sent successfully!"
+                      ? "bg-green-500 opacity-50 cursor-not-allowed"
+                      : status === "Failed to send message."
+                      ? "bg-red-500"
+                      : "bg-[#101F91] hover:bg-[#1A2BA8]"
+                  }`}
+                >
+                  {getButtonLabel()}
+                </button>
+                {status === "Something went wrong." && (
+                  <p className="text-red-500 mt-[5px]">{status}</p>
+                )}
+              </div>
+            </form>
+          </div>
+
+          {/* Contact Info Section */}
+          <div className="sm:flex-1">
+            <div className="contactinfo bg-[#101F91] rounded-[28px] pt-[30px] sm:px-[20px] px-[18px] mt-[50px] pb-[100px] sm:mt-0">
+              <h2 className="text-white font-[700] text-[20px] leading-[36px] tracking-[0px]">
+                Contact Information
+              </h2>
+              <p className="text-white text-[14px] mt-[20px]">
+                How to Get in Touch with Our Team
+              </p>
+
+              {[
+                {
+                  title: "Email Support",
+                  desc: "Interested in switching? Speak to our team.",
+                  contact: "support@usedrivelink.com",
+                },
+                {
+                  title: "Chat to Sales",
+                  desc: "Reach out to our sales team for fast, personalized support.",
+                  contact: "Mondays to Sundays: 8am-7pm",
+                },
+                {
+                  title: "Call Us",
+                  desc: "Give us a call for immediate assistance.",
+                  contact: "+234905-968-5515",
+                },
+              ].map((box, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-[24px] border border-gray-500 p-[18px] bg-[rgba(225,225,225,0.05)] mt-[30px] text-white"
+                >
+                  <h3 className="font-[700] text-[18px]">{box.title}</h3>
+                  <p className="mt-[14px] text-[14px] opacity-75">{box.desc}</p>
+                  <p className="mt-[14px] text-[16px] underline opacity-90">
+                    {box.contact}
+                  </p>
                 </div>
-                {/* box2 */}
-                <div className="sm:flex-1 ">
-                    <div className="contactinfo bg-[#101F91] rounded-[28px] pt-[30px] sm:px-[20px] px-[18px] mt-[50px] pb-[50px] sm:mt-[0px] ">
-                        <div className="h1 text-[white] ">
-                        <span className='font-[700] text-[20px] leading-[36px] tracking-[0px] ' >Contact Information</span>
-                        </div>
-                        <div className="p mt-[20px] text-[white] ">
-                            <p className='text-[14px] font-[400] leading-[24px] tracking-[0px] ' >
-                                How to Get in Touch with Our Team
-                            </p>
-                        </div>
-                        {/* box1 */}
-                        {/* border-[#DEDFE4]  */}
-                        <div className="box1 rounded-[24px] border border-gray-500   p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
-                            <div className="span text-white ">
-                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Email Support</span>
-                            </div>
-                            <div className="p mt-[14px] text-[14px] font-[400] leading-[20px] text-white opacity-75 ">
-                                <p>Interested in switching? speak to our team.</p>
-                            </div>
-                            <div className="intouch  mt-[14px] text-[16px] font-[400] leading-[24px] text-white opacity-[90%] underline ">
-                            <p>support@usedrivelink.com</p>
-                            </div>
-                        </div>
-                        {/* box2 */}
-                        <div className="box1 rounded-[24px] border border border-gray-500 p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
-                            <div className="span text-white ">
-                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Chat to Sales</span>
-                            </div>
-                            <div className="p mt-[14px] text-[14px] font-[400] leading-[20px] text-white opacity-75 ">
-                                <p>Reach out to our sales team for fast,personalized support.</p>
-                            </div>
-                            <div className="intouch  mt-[14px] text-[16px] font-[400] leading-[24px] text-white opacity-[90%] underline ">
-                            <p>Mondays to Sundays: 8am-7pm </p>
-                            </div>
-                        </div>
-                        {/* box3 */}
-                        <div className="box1 rounded-[24px] border border border-gray-500 p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
-                            <div className="span text-white ">
-                                <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Call Us</span>
-                            </div>
-                            <div className="p mt-[14px] text-[14px] font-[400] leading-[20px] text-white opacity-75 ">
-                                <p>Give us a call for immediate assistance.</p>
-                            </div>
-                            <div className="intouch  mt-[14px] text-[16px] font-[400] leading-[24px] text-white opacity-[90%] underline ">
-                            <p>+234905-968-5515</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              ))}
             </div>
+          </div>
         </div>
-
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Forms
-
+export default Forms;
