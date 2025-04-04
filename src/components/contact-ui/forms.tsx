@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import { useState } from "react";
 const Forms
  = () => {
@@ -11,8 +11,13 @@ const Forms
         message: "",
         privacyChecked: false });
   const [status, setStatus] = useState("");
+  const [message, setMessage] = useState(""); // Message feedback
 
+//   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+//   func
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement|any>) => {
+
     const { name, type, value, checked } = e.target;
     setFormData({
         ...formData,
@@ -22,8 +27,10 @@ const Forms
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!formData.privacyChecked) {
         setStatus("Please agree to the Privacy Policy.");
+        console.log(status)
         return;
       }
     setStatus("Sending...");
@@ -44,7 +51,13 @@ const Forms
       if (res.ok) {
         console.log('okay')
         setStatus("Message sent successfully!");
-        setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
+        // setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
+        // reset form
+        setTimeout(() => {
+            setStatus(""); 
+            setFormData({ lastname: "",firstname:'', email: "", message: "" ,privacyChecked:false});
+
+          }, 2000);
       } else {
         console.log('not good')
         setStatus("Failed to send message.");
@@ -61,7 +74,7 @@ const Forms
             <div className="formsgroup bg-[white] rounded-[16px] sm:rounded-[32px] sm:flex sm:gap-[50px] sm:py-[30px] sm:px-[18px] sm:flex-row-reverse shadow-lg px-[18px] py-[30px] ">
                 {/* box1 */}
                 <div className="formbox1 sm:flex-1 ">
-                    <form onSubmit={handleSubmit} >
+                    <form ref={formRef} onSubmit={handleSubmit} >
                         <div className="form-group mt-[30px]">
                             <label className='text-[16px] font-[400] leading-[20px] text-[#64676B] ' htmlFor="">Last Name</label>
                             <input 
@@ -110,7 +123,9 @@ const Forms
                             name="privacyChecked"
                             checked={formData.privacyChecked}
                             onChange={handleChange}
-                            className='border border-[#90979E] cursor-pointer '   id="" />
+                            className='border border-[#90979E] cursor-pointer '   id="" 
+                            />
+                            
                             </div>
                             <div className="">
                                 <p className='text-[14px] font-[400] leading-[20px] text-[#90979E] max-w-[270px] sm:max-w-[490px] ' >
@@ -122,7 +137,22 @@ const Forms
                             </div>
                         </div>
                         <div className="btn mt-[30px] ">
-                            <button className='w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] bg-[#101F91] cursor-pointer ' type="submit">Submit</button>
+                        {status==='Please agree to the Privacy Policy' && <p className='text-red-500 mb-[5px]' >{status}</p>}
+                        {/* bg-[#101F91]  */}
+                        {/* 'w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] cursor-pointer  ' */}
+                            <button 
+                            className={`w-[100%] py-[3px] sm:py-[5px] rounded-[12px] text-[white] cursor-pointer ${status==='Message sent successfully!'?'bg-green-500 cursor-not-allowed opacity-50 ':' bg-[#101F91]'}  ${status==='Failed to send message.'?'bg-red-500':' bg-[#101F91]'}  `}
+                             type="submit" 
+                             disabled={status === 'Message sent successfully!'}
+                              >
+                                {status===''?'Submit':''}
+                                {status==='Please agree to the Privacy Policy'?'Submit':''}
+                                {status==='Sending...'?'Sending....':''}
+                                {status==='Message sent successfully!'?'successful!':''}
+                                {status==='Failed to send message.'?'Failed':''}
+                            </button>
+                            {/* handle error */}
+                            {status==='Something went wrong.'? ( <p className='text-red-500 mt-[5px]' >{status}</p>):( <p className='' ></p> )}
                         </div>
                     </form>
                 </div>
@@ -138,7 +168,8 @@ const Forms
                             </p>
                         </div>
                         {/* box1 */}
-                        <div className="box1 rounded-[24px] border border-[#DEDFE4] p-[18px]  bg-[rgba(225,225,225,0.1)] mt-[30px] ">
+                        {/* border-[#DEDFE4]  */}
+                        <div className="box1 rounded-[24px] border border-gray-500   p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
                             <div className="span text-white ">
                                 <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Email Support</span>
                             </div>
@@ -150,7 +181,7 @@ const Forms
                             </div>
                         </div>
                         {/* box2 */}
-                        <div className="box1 rounded-[24px] border border-[#DEDFE4] p-[18px]  bg-[rgba(225,225,225,0.1)] mt-[30px] ">
+                        <div className="box1 rounded-[24px] border border border-gray-500 p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
                             <div className="span text-white ">
                                 <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Chat to Sales</span>
                             </div>
@@ -162,7 +193,7 @@ const Forms
                             </div>
                         </div>
                         {/* box3 */}
-                        <div className="box1 rounded-[24px] border border-[#DEDFE4] p-[18px]  bg-[rgba(225,225,225,0.1)] mt-[30px] ">
+                        <div className="box1 rounded-[24px] border border border-gray-500 p-[18px]  bg-[rgba(225,225,225,0.05)] mt-[30px] ">
                             <div className="span text-white ">
                                 <span className='font-[700] text-[18px] leading-[26px] tracking-[0px] ' >Call Us</span>
                             </div>
