@@ -159,7 +159,7 @@ const Forms = () => {
                 />
                 <p className="text-[14px] font-[400] leading-[20px] text-[#90979E] max-w-[270px] sm:max-w-[490px]">
                   By submitting this form, you agree to the processing of personal data according to our{" "}
-                  <Link href="/terms">
+                  <Link href="/privacy">
                     <span className="underline hover:text-blue-600 cursor-pointer">Privacy Policy.</span>
                   </Link>
                 </p>
