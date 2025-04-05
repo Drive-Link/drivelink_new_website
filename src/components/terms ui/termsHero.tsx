@@ -19,10 +19,10 @@ const TermsHero = () => {
         </div>
         {/* ab el */}
         <div className="ab">
-            <div className="img absolute top-[-120px] left-0 ">
+            <div className="img absolute top-[100px] left-[-100px] sm:top-[-120px] sm:left-0 ">
                 <Image className='' src={imgbg1} alt='bg-img'/>
             </div>
-            <div className="img absolute top-[-90px] right-0 ">
+            <div className="img hidden sm:block sm:absolute  sm:top-[-90px] sm:right-0 ">
                 <Image className='' src={imgbg2} alt='bg-img'/>
             </div>
         </div>
