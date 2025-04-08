@@ -5,14 +5,6 @@ import menu  from '../../../public/menu.png'
 import Link from 'next/link'
 import { useSectionRef } from '@/context/SectionRefContext'
 
-// type HeaderProps = {
-//   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-//   heroSectionRef: React.RefObject<HTMLDivElement>;
-//   aboutSectionRef: React.RefObject<HTMLDivElement>;
-//   howSectionRef: React.RefObject<HTMLDivElement>;
-//   downloadAppSectionRef: React.RefObject<HTMLDivElement>;
-// };
-// : React.FC<HeaderProps> 
 
 const Header= ()=> {
   const { heroSectionRef, aboutSectionRef, howSectionRef, downloadAppSectionRef, scrollToSection } = useSectionRef();
