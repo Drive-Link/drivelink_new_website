@@ -45,7 +45,7 @@ const Footer = () => {
                 <div className=' hover:underline decoration-[#2E396D]  ' > <Link href={'/terms'} >
                 Terms
                 </Link></div>
-                <div className=' hover:underline decoration-[#2E396D] ' > <Link href={''} > 
+                <div className=' hover:underline decoration-[#2E396D] ' > <Link href={'/privacy'} > 
                  Privacy
                 </Link> </div>
                 <div className=' hover:underline decoration-[#2E396D] ' > <Link href={''} >
