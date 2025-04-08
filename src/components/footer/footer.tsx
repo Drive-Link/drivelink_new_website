@@ -15,10 +15,10 @@ const Footer = () => {
             <div className="sm:flex sm:justify-between sm:items-center ">
 
             <div className="link-grp grid grid-cols-2 gap-8 p-8 sm:p-0  font-[400] text-[20px] sm:text-[15px] opacity-[75%] sm:opacity-[75%] text-[#2E396D] sm:flex  sm:mt-[50px] cursor-pointer   ">
-                <Link href={'#about'}>
+                <Link href={'/#about'}>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline">About us</div>
                 </Link>
-                <Link href={'#how-it-works'}>
+                <Link href={'/#how-it-works'}>
                 <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">How it works</div>
                 </Link>
                 {/* <div className="bx1  text-center sm:text-start cursor-pointer hover:underline ">Services</div> */}
