@@ -49,18 +49,22 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className='hidden sm:block'>
           <ul className='flex text-[16px] w-[200px] justify-between font-[400]'>
+            <Link href={'/#aboutSection'}>
             <li
               onClick={() => scrollToSection(aboutSectionRef)}
               className='cursor-pointer hover:underline'
             >
               About us
             </li>
+            </Link>
+            <Link href={'/#howSection'}>
             <li
               onClick={() => scrollToSection(howSectionRef)}
               className='cursor-pointer hover:underline'
             >
               How it Works
             </li>
+            </Link>
           </ul>
         </nav>
 
@@ -71,12 +75,14 @@ const Header = () => {
               Contact us
             </button>
           </Link>
+          <Link href={'/#downloadAppSection'}>
           <button
             onClick={() => scrollToSection(downloadAppSectionRef)}
             className='bg-[#101f91] text-white w-[128px] h-[44px] p-[16px] rounded-[8px] cursor-pointer flex justify-center items-center '
           >
             Download
           </button>
+          </Link>
         </div>
 
         {/* Mobile Icon */}
@@ -89,17 +95,22 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className='sm:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 z-[98] animate-slide-down'>
           <ul className='flex flex-col items-center gap-4 text-[#101f91] font-[400]'>
+            <Link href={'/#aboutSection'}>
             <li onClick={() => handleScrollAndCloseMenu(aboutSectionRef)} className='cursor-pointer'>
               About us
             </li>
+            </Link>
+            <Link href={'/#howSection'}>
             <li onClick={() => handleScrollAndCloseMenu(howSectionRef)} className='cursor-pointer'>
               How it Works
             </li>
+            </Link>
             <li>
               <Link href='/contact' onClick={() => setIsMobileMenuOpen(false)}>
                 Contact us
               </Link>
             </li>
+            <Link href={'/#downloadAppSection'}>
             <li>
               <button
                 onClick={() => handleScrollAndCloseMenu(downloadAppSectionRef)}
@@ -108,6 +119,7 @@ const Header = () => {
                 Download
               </button>
             </li>
+            </Link>
           </ul>
         </div>
       )}
