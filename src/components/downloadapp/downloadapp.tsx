@@ -12,6 +12,7 @@ import imgstar7 from '../../../public/downloadapp/Star 7.png'
 import imgstar8 from '../../../public/downloadapp/Star 8.png'
 import imgspeech7 from '../../../public/downloadapp/7.png'
 import lines from '../../../public/lines.png'
+import Link from 'next/link'
 
 
 const DownloadApp = () => {
@@ -53,17 +54,43 @@ const DownloadApp = () => {
                   </div>
                 </div> */}
                 {/* copy paste */}
+                {/* <Link href={'https://forms.gle/YPmytd4HbMg3WAGj8'} >
                  <div className="btn-2 w-[135px] border  h-[45px] cursor-pointer ">
+
                   <Image className='w-[100%] h-[100%]' src={playbtn} alt='' />
                 </div>
-                <div className="btn-2 w-[135px] h-[45px] border cursor-pointer ">
-                  <Image className='w-[100%] h-[100%]' src={appstore} alt='' />
-                  {/* <div className="btn-box1"></div>
-                  <div className="btn-box2">
-                    <div className="sub1"></div>
-                    <div className="sub2"></div>
-                  </div> */}
-                </div>
+                </Link> */}
+                <a
+  href="https://forms.gle/YPmytd4HbMg3WAGj8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block w-[135px] h-[45px] border cursor-pointer hover:opacity-80 transition duration-200"
+  style={{ zIndex: 10, position: 'relative' }}
+>
+  <Image
+    src={playbtn}
+    alt="Play Store"
+    width={135}
+    height={45}
+    className="w-full h-full object-contain"
+  />
+</a>
+<a
+  href="https://forms.gle/YPmytd4HbMg3WAGj8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block w-[135px] h-[45px] border cursor-pointer hover:opacity-80 transition duration-200"
+  style={{ zIndex: 10, position: 'relative' }}
+>
+  <Image
+    src={appstore}
+    alt="App Store"
+    width={135}
+    height={45}
+    className="w-full h-full object-contain"
+  />
+</a>
+
               </div>
             </div>
             {/* box2 */}
