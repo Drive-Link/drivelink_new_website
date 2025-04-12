@@ -37,11 +37,19 @@ export async function POST(req: Request) {
     console.log("Email sent:", info.response);
 
     return NextResponse.json({ success: true, message: "Email sent successfully!" });
-  } catch (error) {
-    console.error("Error sending email:", error);
+  }catch (error: any) {
+    console.error("Full Error:", error);
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { error: error.message || "Internal Server Error" },
       { status: 500 }
     );
   }
 }
+
+// catch (error) {
+//   console.error("Error sending email:", error);
+//   return NextResponse.json(
+//     { error: "Internal Server Error" },
+//     { status: 500 }
+//   );
+// }
