@@ -33,9 +33,11 @@ const HeroSection = () => {
           </div>
           {/* btn-group */}
           <div className="btn-group flex justify-center sm:justify-start mt-[50px] gap-[16px] ">
+            <Link href={'#download'}>
             <button className='bg-[#101f91] text-white w-[131px] h-[48px] font-[400] py-[16px] px-[23px] rounded-[4px] flex justify-center items-center d-block cursor-pointer '>
               Get Started
             </button>
+            </Link>
             <Link href={'#download'} >
             <button className='bg-white w-[157px] h-[48px] text-[#101f91] font-[400] py-[16px] px-[23px] flex justify-center items-center d-block  rounded-[4px] cursor-pointer  '>Download App
             </button>
