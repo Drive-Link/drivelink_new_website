@@ -11,17 +11,17 @@ const page = () => {
   const { heroSectionRef, aboutSectionRef, howSectionRef, downloadAppSectionRef } = useSectionRef();
   return (
    <div className="app bg-white min-h-[100vh]">
-    <div ref={heroSectionRef} id='heroSection' >
+    <div ref={heroSectionRef} id='home' >
     <HeroSection/>
     </div>
-    <div ref={howSectionRef} id='howSection' >
+    <div ref={howSectionRef} id='how-it-works' >
     <About/>
     </div>
-    <div ref={aboutSectionRef} id='aboutSection' >
+    <div ref={aboutSectionRef} id='about' >
 
     <Whyus/>
     </div>
-    <div ref={downloadAppSectionRef} id='downloadAppSection' >
+    <div ref={downloadAppSectionRef} id='download' >
 
     <DownloadApp />
     </div>
