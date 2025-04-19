@@ -64,7 +64,7 @@ const DownloadApp = () => {
   href="https://forms.gle/YPmytd4HbMg3WAGj8"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-block w-[135px] h-[45px] border cursor-pointer hover:opacity-80 transition duration-200"
+  className="inline-block w-[135px] h-[45px]  cursor-pointer hover:opacity-80 transition duration-200"
   style={{ zIndex: 10, position: 'relative' }}
 >
   <Image
@@ -79,7 +79,7 @@ const DownloadApp = () => {
   href="https://forms.gle/YPmytd4HbMg3WAGj8"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-block w-[135px] h-[45px] border cursor-pointer hover:opacity-80 transition duration-200"
+  className="inline-block w-[135px] h-[45px]  cursor-pointer hover:opacity-80 transition duration-200"
   style={{ zIndex: 10, position: 'relative' }}
 >
   <Image
