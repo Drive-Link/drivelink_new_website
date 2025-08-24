@@ -69,20 +69,20 @@ export default function OnboardingView() {
       <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/dashboard/21.png)" }}
+          style={{ backgroundImage: "url(/dashboard/admin_login_bg.png)" }}
         />
 
         <div
           className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to bottom, #101F91, #0C111D)",
-            opacity: 0.5,
-          }}
+        // style={{
+        //   background: "linear-gradient(to bottom, #101F91, #0C111D)",
+        //   opacity: 0.5,
+        // }}
         />
         <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full max-w-md flex items-center justify-center">
             <Image
-              src="/dashboard/bg-abstract.png"
+              src="/dashboard/welcome_image.png"
               alt="Preview-of-a-dashboard"
             />
           </div>
@@ -97,17 +97,25 @@ export default function OnboardingView() {
 
 
 
-          <div className="flex items-center space-x-4 mt-8">
+          <div className="flex items-center justify-between mt-8 w-full">
             {/* Left Chevron */}
             <button
-              onClick={() => setCurrentStep(prev => {
-                const steps: OnboardingStep[] = ["login", "forgot-password", "check-email", "reset-password", "success"]
-                const idx = steps.indexOf(prev)
-                return steps[Math.max(idx - 1, 0)]
-              })}
-              className="p-2 text-white/70 hover:text-white transition"
+              onClick={() =>
+                setCurrentStep((prev) => {
+                  const steps: OnboardingStep[] = [
+                    "login",
+                    "forgot-password",
+                    "check-email",
+                    "reset-password",
+                    "success",
+                  ];
+                  const idx = steps.indexOf(prev);
+                  return steps[Math.max(idx - 1, 0)];
+                })
+              }
+              className="p-2 text-white transition"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={24} />
             </button>
 
             {/* Step Indicators */}
@@ -115,23 +123,33 @@ export default function OnboardingView() {
               {[0, 1, 2, 3, 4].map((index) => (
                 <div
                   key={index}
-                  className={`w-2 h-2 rounded-full ${index === getCurrentStepIndex() ? "bg-white" : "bg-white/50"}`}
+                  className={`w-2 h-2 rounded-full ${index === getCurrentStepIndex() ? "bg-white" : "bg-white/50"
+                    }`}
                 />
               ))}
             </div>
 
             {/* Right Chevron */}
             <button
-              onClick={() => setCurrentStep(prev => {
-                const steps: OnboardingStep[] = ["login", "forgot-password", "check-email", "reset-password", "success"]
-                const idx = steps.indexOf(prev)
-                return steps[Math.min(idx + 1, steps.length - 1)]
-              })}
-              className="p-2 text-white/70 hover:text-white transition"
+              onClick={() =>
+                setCurrentStep((prev) => {
+                  const steps: OnboardingStep[] = [
+                    "login",
+                    "forgot-password",
+                    "check-email",
+                    "reset-password",
+                    "success",
+                  ];
+                  const idx = steps.indexOf(prev);
+                  return steps[Math.min(idx + 1, steps.length - 1)];
+                })
+              }
+              className="p-2 text-white transition"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={24} />
             </button>
           </div>
+
 
         </div>
       </div>
