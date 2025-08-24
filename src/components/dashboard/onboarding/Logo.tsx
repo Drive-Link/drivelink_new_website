@@ -8,7 +8,7 @@ export const Logo = () => {
     <div className="w-[135px] flex items-center justify-between cursor-pointer">
       <Link href='/admin'>
         <div className="drivelink-img w-[42px]">
-          <Image src="drivelink-icon.png" alt="Drivelink icon" />
+          <Image src="/drivelink-icon.png" alt="Drivelink icon" />
         </div>
       </Link>
       <Link href='/admin'>

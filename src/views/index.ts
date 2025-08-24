@@ -1,3 +1,4 @@
 import OnboardingView from "./OnboardingView";
+import { AdminDashboardView } from "./DashboardView";
 
-export { OnboardingView };
+export { OnboardingView, AdminDashboardView };
