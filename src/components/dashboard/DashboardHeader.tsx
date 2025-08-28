@@ -2,14 +2,37 @@
 
 import React from "react";
 import { Search, Bell, Settings } from "lucide-react";
-import { Input, Button, Avatar } from "@heroui/react";
+import { Input, Button } from "@heroui/react";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   setSidebarOpen: (open: boolean) => void;
 }
 
+interface AdminProfile {
+  email_address?: string;
+  phone_number?: string;
+  first_name: string;
+  last_name: string;
+  created_at?: string;
+  role?: string;
+}
+
 export const DashboardHeader = ({ setSidebarOpen }: HeaderProps) => {
+  const storedData = sessionStorage.getItem("AdminData");
+  const adminData: AdminProfile | null = storedData ? JSON.parse(storedData) : null;
+
+  const fullName = adminData
+    ? `${adminData.first_name || ""} ${adminData.last_name || ""}`.trim()
+    : "Guest";
+
+  const role = adminData?.role || "ADMIN";
+
+  // get initials (first letter of first_name + first letter of last_name)
+  const initials = adminData
+    ? `${(adminData.first_name?.[0] || "").toUpperCase()}${(adminData.last_name?.[0] || "").toUpperCase()}`
+    : "GU";
+
   return (
     <header className="bg-white border-b border-gray-200 px-4 py-4 lg:px-6">
       <div className="flex items-center justify-between">
@@ -41,7 +64,9 @@ export const DashboardHeader = ({ setSidebarOpen }: HeaderProps) => {
             <Input
               placeholder="Search here..."
               className="w-80"
-              startContent={<Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />}
+              startContent={
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+              }
               variant="bordered"
               classNames={{
                 input: [
@@ -71,12 +96,10 @@ export const DashboardHeader = ({ setSidebarOpen }: HeaderProps) => {
             <Bell className="w-5 h-5" />
           </Button>
 
-          {/* User Avatar */}
-          <Avatar
-            src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-            alt="Driver Avatar Image"
-            size="sm"
-          />
+          {/* User Initials Circle */}
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-600 text-white text-sm font-medium">
+            {initials}
+          </div>
         </div>
       </div>
 

@@ -1,13 +1,20 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Checkbox, Button } from "@heroui/react"
-import { createSchema, useField } from "@/lib"
+import { createSchema, showToast, useField } from "@/lib"
 import { FormField, PasswordField } from "../../form"
 import { ReuseableFormHead } from "./ReuseableFormHead"
-import { ReuseableBtn } from "./ReuseableBtn"
+import { useRouter } from "next/navigation"
+import { Onest } from "next/font/google";
+import { useTransition } from "react";
 
+
+
+const onest = Onest({
+  subsets: ["latin"],
+});
 
 interface LoginFormProps {
   onForgotPassword: () => void
@@ -24,6 +31,9 @@ export const PasswordSchema = createSchema(
 );
 
 export function LoginForm({ onForgotPassword }: LoginFormProps) {
+  const router = useRouter();
+
+  const [isPending, startTransition] = useTransition();
   const [rememberMe, setRememberMe] = useState(false)
 
   const { value: email, error: emailError, handleChange: handleEmailChange } = useField("", EmailSchema);
@@ -33,29 +43,40 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
     handleChange: handlePasswordChange,
   } = useField("", PasswordSchema);
 
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [confirmError, setConfirmError] = useState<string | null>(null);
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
 
-  useEffect(() => {
-    if (confirmPassword && confirmPassword !== password) {
-      setConfirmError("Passwords do not match");
-    } else {
-      setConfirmError(null);
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email_address: email, password }),
+      });
+
+      const data = await res.json();
+
+      sessionStorage.setItem("AdminData", JSON.stringify(data?.data?.user || {}));
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong");
+        setIsSubmitting(false);
+        return;
+      }
+
+      startTransition(() => {
+        router.push("/admin/dashboard");
+      });
+    } catch (err) {
+      setError("Network error, please try again.");
+      setIsSubmitting(false);
     }
-
-    setIsDisabled(!password || !!passwordError || !!confirmError);
-  }, [password, passwordError, confirmPassword, confirmError]);
-
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle login logic here
-    console.log("Login attempt:", { email, password, rememberMe })
-  }
-
-
+  };
 
 
   return (
@@ -68,8 +89,14 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
         className="text-start" />
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleLogin} className="space-y-6">
+
         <div className="space-y-2">
+          {error && (
+            <div className="p-2 text-sm text-red-600 bg-red-100 border border-red-300 rounded">
+              {error}
+            </div>
+          )}
           <FormField
             label="Email address"
             id="email"
@@ -121,12 +148,19 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
           </button>
         </div>
 
-        <ReuseableBtn
-          text="Sign in"
+        <Button
+          variant="solid"
+          size="lg"
+          radius="lg"
           type="submit"
-          isLoading={false}
-          className="mt-2"
-        />
+          isLoading={isSubmitting || isPending}
+          spinnerPlacement="start"
+          className={`mt-2 w-full bg-[#101F91] text-white text-base 
+            rounded-lg font-medium py-2 ${onest.className}`}
+        >
+          Sign in
+        </Button>
+
 
         <Button
           type="button"

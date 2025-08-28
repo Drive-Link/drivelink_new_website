@@ -34,9 +34,10 @@ export const ReuseableBtn: React.FC<ReuseableBtnProps> = ({
         radius="lg"
         type={type}
         isLoading={isLoading}
-        onPress={onClick}
-        disabled={disabled}
-        className={`w-full bg-[#101F91] text-white text-base rounded-lg font-medium py-2 ${onest.className} ${className}`}>
+        spinnerPlacement="start"
+        disabled={disabled || isLoading}
+        className={`w-full bg-[#101F91] text-white text-base rounded-lg font-medium py-2 ${onest.className} ${className}`}
+      >
         {text}
       </Button>
     </div>
