@@ -1,4 +1,5 @@
 "use client";
+import ProtectedRoute from "@/utils/hoc";
 import React, { createContext, useContext, useRef, RefObject } from "react";
 
 // Define the context type
@@ -15,10 +16,10 @@ const SectionRefContext = createContext<SectionRefContextType | undefined>(undef
 
 // Context Provider component
 export const SectionRefProvider = ({ children }: { children: React.ReactNode }) => {
-  const heroSectionRef = useRef<HTMLDivElement | null |any>(null);
-  const aboutSectionRef = useRef<HTMLDivElement | null |any>(null);
-  const howSectionRef = useRef<HTMLDivElement | null |any>(null);
-  const downloadAppSectionRef = useRef<HTMLDivElement | null |any>(null);
+  const heroSectionRef = useRef<HTMLDivElement | null | any>(null);
+  const aboutSectionRef = useRef<HTMLDivElement | null | any>(null);
+  const howSectionRef = useRef<HTMLDivElement | null | any>(null);
+  const downloadAppSectionRef = useRef<HTMLDivElement | null | any>(null);
 
   // Function to handle smooth scrolling
   const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
@@ -30,11 +31,13 @@ export const SectionRefProvider = ({ children }: { children: React.ReactNode }) 
   };
 
   return (
+
     <SectionRefContext.Provider
       value={{ heroSectionRef, aboutSectionRef, howSectionRef, downloadAppSectionRef, scrollToSection }}
     >
       {children}
     </SectionRefContext.Provider>
+
   );
 };
 

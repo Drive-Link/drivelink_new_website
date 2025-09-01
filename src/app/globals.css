@@ -2,6 +2,38 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* Bold */
+@font-face {
+  font-family: 'Humanst521 BT';
+  src: url('/fonts/humanst521_bt_bold-webfont.woff2') format('woff2'),
+       url('/fonts/humanst521_bt_bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Humanst521 BT';
+  src: url('/fonts/humanst521_It_bt_light-webfont.woff2') format('woff2'),
+       url('/fonts/humanst521_It_bt_light-webfont.woff') format('woff');
+  font-weight: 300; /* usually light is 300 */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roman (Regular) */
+@font-face {
+  font-family: 'Humanst521 BT';
+  src: url('/fonts/humanst521_bt_roman-webfont.woff2') format('woff2'),
+       url('/fonts/humanst521_bt_roman-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 
 *{
     user-select:none;
@@ -25,6 +57,11 @@ html {
       }
     }
   }
+
+:root {
+  --font-local: 'Humanst521 BT', sans-serif;
+}
+
 
   @theme inline {
     --radius-sm:calc(var(--radius) - 4px);
@@ -97,6 +134,11 @@ html {
     --sidebar-accent-foreground:oklch(0.21 0.034 264.665);
     --sidebar-border:oklch(0.928 0.006 264.531);
     --sidebar-ring:oklch(0.707 0.022 261.325);
+    --color-primary: #101F91;
+     --color-gray-900: #101828;
+  --color-gray-500: #667085;
+  --color-gray-700: #344054;
+  --color-purple-700:#6941C6;
 }
 
   .dark {
@@ -142,3 +184,25 @@ html {
     }
 }
   
+@layer utilities {
+.text-primry{
+  color: var(--color-primary);
+}
+.text-color-gray-900 {
+  color: var(--color-gray-900);
+}
+.text-color-gray-500{
+  color: var(--color-gray-500)
+}
+.text-color-gray-700{
+  color: var(--color-gray-700)
+}
+.text-color-purple-700{
+  color: var(--color-purple-700)
+}
+  .font-local {
+    font-family: var(--font-local);
+  }
+
+ 
+}

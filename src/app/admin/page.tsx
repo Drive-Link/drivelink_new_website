@@ -1,11 +1,8 @@
+import { OnboardingView } from '@/views'
 import React from 'react'
 
 const page = () => {
-  return (
-    <div>
-      admin
-      
-    </div>
+  return (<OnboardingView />
   )
 }
 
